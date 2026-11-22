@@ -1,0 +1,545 @@
+\documentclass[11pt,a4paper,oneside]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=2.4cm}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.35em}
+\setlist{nosep}
+\title{\Huge Egzamin licencjacki z fizyki\\[0.5em]\Large Kompletne opracowanie zagadnień}
+\author{Materiał do przygotowania do egzaminu dyplomowego\\Fizyka I stopnia}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter*{Wprowadzenie}
+\addcontentsline{toc}{chapter}{Wprowadzenie}
+Niniejsze opracowanie zachowuje podział i kolejność zagadnień z listy pytań na egzamin dyplomowy z fizyki I stopnia: fizyka ogólna, fizyka teoretyczna i ekonofizyka. Każdy temat zawiera omówienie podstawowych pojęć, praw, zależności matematycznych oraz ich interpretacji. Wzory należy umieć objaśnić słownie, wskazując znaczenie symboli, założenia modelu i zakres jego stosowalności. W przypadku odpowiedzi ustnej warto uzupełniać opis o schemat doświadczenia, wykres lub prosty przykład.
+\bigskip
+
+\noindent\textbf{Uwaga redakcyjna:} materiał ma charakter syntetycznego skryptu do nauki. Wzory i konwencje znaków mogą zależeć od przyjętej konwencji wykładowej; przed egzaminem warto porównać je z notatkami i podręcznikiem prowadzącego.
+
+\chapter{Fizyka ogólna}
+\section{1. Zasady dynamiki Newtona. Pęd. Zasada zachowania pędu}
+Mechanika Newtona opisuje ruch ciał w inercjalnych układach odniesienia. Pierwsza zasada dynamiki (zasada bezwładności) mówi, że ciało pozostaje w spoczynku lub porusza się ruchem jednostajnym prostoliniowym, jeżeli wypadkowa sił jest równa zeru. Druga zasada określa związek przyczyny i skutku: wypadkowa siła jest równa szybkości zmian pędu,
+\[
+\vec F_{\rm w}=\frac{d\vec p}{dt},\qquad \vec p=m\vec v.
+\]
+Dla stałej masy otrzymujemy \(\vec F_{\rm w}=m\vec a\). Trzecia zasada stwierdza, że oddziaływanie dwóch ciał ma charakter wzajemny: siły, którymi ciała działają na siebie, mają równe wartości, ten sam kierunek i przeciwne zwroty; działają jednak na różne ciała. Pęd jest wektorową wielkością opisującą ruch postępowy.
+
+Dla układu wielu ciał całkowity pęd wynosi \(\vec P=\sum_i\vec p_i\). Z równań ruchu wynika \(d\vec P/dt=\vec F_{\rm zewn}\), ponieważ siły wewnętrzne znoszą się parami. Jeżeli wypadkowa siła zewnętrzna jest zerowa, całkowity pęd układu pozostaje stały. Jest to zasada zachowania pędu. Obowiązuje ona m.in. podczas zderzeń, odrzutu i rozpadu cząstek. W zderzeniu sprężystym zachowane są pęd i energia kinetyczna, a w niesprężystym zachowany jest pęd, lecz część energii kinetycznej przechodzi w energię wewnętrzną, odkształcenia lub ciepło. Impuls siły \( \vec J=\int\vec F\,dt\) jest równy zmianie pędu.
+
+\section{2. Inercjalne i nieinercjalne układy odniesienia. Siły bezwładności}
+Układ odniesienia określa sposób przypisywania położenia i czasu zdarzeniom. Układ inercjalny to taki, w którym spełniona jest pierwsza zasada Newtona: ciało, na które nie działa wypadkowa siła, porusza się ruchem jednostajnym prostoliniowym. Każdy układ poruszający się względem układu inercjalnego ze stałą prędkością również jest inercjalny w mechanice klasycznej. Układ nieinercjalny przyspiesza lub obraca się względem układu inercjalnego, dlatego równania ruchu zapisane w nim wymagają uwzględnienia sił pozornych, nazywanych siłami bezwładności.
+
+Dla układu o przyspieszeniu translacyjnym \(\vec a_0\) siła bezwładności działająca na masę \(m\) ma postać \(\vec F_b=-m\vec a_0\). W obracającym się układzie pojawiają się dodatkowo siła odśrodkowa \(\vec F_{\rm odśr}=-m\vec\Omega\times(\vec\Omega\times\vec r)\) oraz siła Coriolisa \(\vec F_C=-2m\vec\Omega\times\vec v'\), gdzie \(\vec\Omega\) jest prędkością kątową układu, a \(\vec v'\) prędkością względem niego. Przy zmiennej prędkości obrotowej występuje też siła związana z przyspieszeniem kątowym. Siły te nie opisują dodatkowych oddziaływań między ciałami, lecz wynikają z wyboru przyspieszonego układu współrzędnych.
+
+Przykładem skutków obrotu Ziemi jest odchylenie poruszających się mas powietrza i wody wskutek siły Coriolisa. Siła odśrodkowa zmniejsza efektywne przyspieszenie grawitacyjne i odpowiada za niewielkie spłaszczenie Ziemi. W zadaniach należy jasno wskazać układ odniesienia, rozłożyć siły rzeczywiste i pozorne oraz stosować drugą zasadę Newtona w postaci właściwej dla tego układu.
+
+\section{3. Praca i energia. Energia kinetyczna i potencjalna. Siły zachowawcze. Zasada zachowania energii mechanicznej}
+Praca siły przy przesunięciu punktu materialnego po torze \(C\) jest całką \(W=\int_C\vec F\cdot d\vec r\). Dla stałej siły i prostoliniowego przesunięcia \(W=Fs\cos\alpha\). Moc chwilowa określa tempo wykonywania pracy: \(P=dW/dt=\vec F\cdot\vec v\). Energia kinetyczna punktu materialnego wynosi \(E_k=mv^2/2\). Twierdzenie o pracy i energii kinetycznej mówi, że praca siły wypadkowej jest równa zmianie energii kinetycznej: \(W_{\rm w}=\Delta E_k\).
+
+Siła jest zachowawcza, jeżeli jej praca zależy wyłącznie od położenia początkowego i końcowego, a po dowolnej drodze zamkniętej jest równa zeru. Można wtedy zdefiniować energię potencjalną \(E_p\), tak że \(\vec F=-\nabla E_p\). Dla pola grawitacyjnego blisko powierzchni Ziemi \(E_p=mgh\), a dla sprężyny idealnej \(E_p=kx^2/2\). Energia mechaniczna jest sumą \(E_m=E_k+E_p\). Jeżeli działają wyłącznie siły zachowawcze, \(E_m\) jest stała. Gdy występują tarcie lub opór ośrodka, energia mechaniczna może maleć, ale całkowita energia układu wraz z energią wewnętrzną nadal jest zachowana.
+
+Zasada zachowania energii pozwala rozwiązywać problemy bez bezpośredniego wyznaczania czasu ruchu. Należy jednak uwzględnić wszystkie formy energii i poprawnie określić poziom zerowy energii potencjalnej. W układzie z siłami niezachowawczymi zmiana energii mechanicznej jest równa pracy tych sił.
+
+\section{4. Dynamika bryły sztywnej. Zasada zachowania momentu pędu}
+Bryła sztywna jest idealizacją ciała, w którym odległości między dowolnymi punktami nie zmieniają się. Jej ruch można rozłożyć na ruch środka masy i obrót wokół środka masy. Wielkością opisującą obrót jest prędkość kątowa \(\vec\omega\), a odpowiednikiem masy w ruchu obrotowym jest moment bezwładności \(I=\sum_i m_ir_i^2\), gdzie \(r_i\) oznacza odległość elementu masy od osi. Moment siły \(\vec M=\vec r\times\vec F\) określa zdolność siły do zmiany ruchu obrotowego. Dla obrotu wokół stałej osi zachodzi \(M=I\alpha\), jeśli \(I\) jest stały.
+
+Moment pędu punktu materialnego to \(\vec L=\vec r\times\vec p\), a dla bryły obracającej się wokół osi głównej \(L=I\omega\). Ogólna zależność ma postać \(d\vec L/dt=\vec M_{\rm zewn}\). Jeżeli wypadkowy zewnętrzny moment sił jest równy zeru, całkowity moment pędu pozostaje stały. To zasada zachowania momentu pędu. Gdy łyżwiarz przyciąga ręce do osi obrotu, zmniejsza moment bezwładności, a prędkość kątowa rośnie tak, aby \(I\omega\) pozostało stałe.
+
+Energia kinetyczna obrotu wynosi \(E_{\rm obr}=I\omega^2/2\). W toczeniu bez poślizgu występuje jednocześnie ruch postępowy i obrotowy, a warunek kinematyczny ma postać \(v_{\rm CM}=\omega R\). W analizie bryły należy dobrać oś, obliczyć momenty bezwładności i momenty sił oraz odróżnić moment pędu od pędu liniowego.
+
+\section{5. Oscylator harmoniczny i oscylator z tłumieniem oraz ich drgania niewymuszone. Drgania wymuszone i rezonans}
+Oscylator harmoniczny to układ, w którym siła przywracająca jest proporcjonalna do wychylenia i skierowana przeciwnie: \(F=-kx\). Równanie ruchu ma postać \(m\ddot x+kx=0\), czyli \(\ddot x+\omega_0^2x=0\), gdzie \(\omega_0=\sqrt{k/m}\). Rozwiązaniem jest \(x(t)=A\cos(\omega_0t+\varphi)\). Okres wynosi \(T=2\pi/\omega_0\), a energia \(E=\frac12m\dot x^2+\frac12kx^2\) jest stała. Przykładami są masa na sprężynie oraz wahadło matematyczne dla małych wychyleń.
+
+Tłumienie opisuje się często siłą oporu proporcjonalną do prędkości, \(F_t=-b\dot x\). Otrzymujemy \(m\ddot x+b\dot x+kx=0\). Dla słabego tłumienia amplituda maleje wykładniczo, a częstość drgań jest mniejsza od \(\omega_0\). Wyróżnia się ruch podtłumiony, krytycznie tłumiony i przetłumiony. W pierwszym układ oscyluje, w dwóch pozostałych powraca do równowagi bez oscylacji.
+
+Drgania wymuszone powstają pod wpływem zewnętrznej siły okresowej \(F(t)=F_0\cos\omega t\). Po zaniku składowej przejściowej układ drga z częstością wymuszenia. Amplituda zależy od \(\omega\), tłumienia i parametrów układu. Rezonans występuje, gdy odpowiedź jest szczególnie duża w pobliżu częstości własnej; tłumienie ogranicza maksymalną amplitudę i przesuwa częstość maksimum. Zjawisko wykorzystuje się w selekcji częstotliwości, ale może też prowadzić do niepożądanych dużych drgań konstrukcji.
+
+\section{6. Grawitacja: prawo grawitacji Newtona, prawa Keplera, grawitacyjna energia potencjalna}
+Prawo powszechnego ciążenia Newtona stwierdza, że każde dwa ciała o masach \(m_1\) i \(m_2\) przyciągają się siłą o wartości \(F=Gm_1m_2/r^2\), skierowaną wzdłuż prostej łączącej ich środki. Stała grawitacji wynosi \(G\). Pole grawitacyjne masy punktowej ma natężenie \(\vec g=-GM\vec r/r^3\). Dla rozkładów mas stosuje się zasadę superpozycji, sumując wkłady od poszczególnych elementów.
+
+Prawa Keplera opisują ruch planet. Pierwsze mówi, że orbity są elipsami, a Słońce znajduje się w jednym z ognisk. Drugie, prawo pól, stwierdza, że promień wodzący planety zakreśla równe pola w równych odstępach czasu; wynika ono z zachowania momentu pędu. Trzecie wiąże kwadrat okresu obiegu z sześcianem wielkiej półosi: \(T^2\propto a^3\). Dla masy centralnej \(M\), przy zaniedbaniu masy planety, \(T^2=4\pi^2a^3/(GM)\).
+
+Grawitacyjna energia potencjalna dwóch mas, przy wyborze zera w nieskończoności, wynosi \(U(r)=-Gm_1m_2/r\). Znak ujemny oznacza, że układ związany ma mniejszą energię niż rozdzielone ciała w nieskończoności. Prędkość na orbicie kołowej wynosi \(v=\sqrt{GM/r}\), a energia całkowita satelity \(E=-GMm/(2r)\). Pojęcia te są podstawą opisu orbit planet, księżyców i sztucznych satelitów.
+
+\section{7. Statyka i dynamika płynów: prawo Pascala, prawo Archimedesa, równanie ciągłości strugi, równanie Bernoulliego}
+Płyn jest substancją, która może płynąć i przyjmuje kształt naczynia. W statyce płynów ciśnienie definiuje się jako \(p=F_\perp/S\). Prawo Pascala mówi, że zmiana ciśnienia wywierana na płyn zamknięty rozchodzi się w nim jednakowo we wszystkich kierunkach. Zasada ta stanowi podstawę działania prasy i podnośnika hydraulicznego: \(F_1/S_1=F_2/S_2\). Ciśnienie hydrostatyczne na głębokości \(h\) wynosi \(p=p_0+\rho gh\).
+
+Prawo Archimedesa stwierdza, że na ciało zanurzone w płynie działa skierowana ku górze siła wyporu równa ciężarowi wypartego płynu: \(F_w=\rho_{\rm pł}gV_{\rm wyparte}\). Warunek pływania wynika z równowagi ciężaru i siły wyporu. Dla ustalonego przepływu nieściśliwego płynu równanie ciągłości ma postać \(Av=\mathrm{const}\), a więc w zwężeniu przewodu prędkość rośnie.
+
+Dla idealnego, nielepkiego i nieściśliwego płynu w przepływie ustalonym wzdłuż linii prądu równanie Bernoulliego zapisuje się jako \(p+\rho v^2/2+\rho gh=\mathrm{const}\). Składniki odpowiadają energii ciśnienia, energii kinetycznej i potencjalnej przypadającej na jednostkę objętości. Równanie wyjaśnia m.in. zmianę ciśnienia w przewężeniu strugi. W rzeczywistych płynach lepkość powoduje straty energii, dlatego równanie Bernoulliego wymaga wtedy poprawek.
+
+\section{8. Transformacje Galileusza. Transformacja Lorentza. Relatywistyczne transformacje długości, prędkości i czasu. Relatywistyczny pęd i energia kinetyczna}
+W mechanice klasycznej transformacje Galileusza łączą współrzędne dwóch układów inercjalnych, z których jeden porusza się ze stałą prędkością \(v\) wzdłuż osi \(x\): \(x'=x-vt\), \(t'=t\), \(y'=y\), \(z'=z\). Czas jest absolutny, a prędkości dodają się klasycznie. Transformacje te są właściwe, gdy prędkości są dużo mniejsze od prędkości światła.
+
+Szczególna teoria względności opiera się na zasadzie względności i stałości prędkości światła w próżni. Transformacja Lorentza ma postać \(x'=\gamma(x-vt)\), \(t'=\gamma(t-vx/c^2)\), gdzie \(\gamma=1/\sqrt{1-v^2/c^2}\). Zjawiska relatywistyczne obejmują dylatację czasu \(\Delta t=\gamma\Delta\tau\) oraz skrócenie długości w kierunku ruchu \(L=L_0/\gamma\). Czas własny mierzy zegar spoczywający względem rozpatrywanego zdarzenia lub mierzący odstęp między zdarzeniami zachodzącymi w tym samym miejscu jego układu.
+
+Relatywistyczne dodawanie prędkości w jednym wymiarze opisuje wzór \(u'=(u-v)/(1-uv/c^2)\), który nie pozwala uzyskać prędkości większej od \(c\) dla obiektów materialnych. Pęd wynosi \(\vec p=\gamma m\vec v\), energia całkowita \(E=\gamma mc^2\), a energia kinetyczna \(E_k=(\gamma-1)mc^2\). Związek energii i pędu to \(E^2=p^2c^2+m^2c^4\). Dla małych prędkości wzory przechodzą w klasyczne zależności.
+
+\section{9. Gaz doskonały, jego przemiany i równanie stanu}
+Gaz doskonały jest modelem, w którym cząsteczki traktuje się jako punkty materialne o pomijalnej objętości własnej, nieoddziałujące ze sobą poza sprężystymi zderzeniami. Równanie stanu ma postać \(pV=nRT=Nk_BT\), gdzie \(p\) jest ciśnieniem, \(V\) objętością, \(n\) liczbą moli, \(N\) liczbą cząsteczek, a \(T\) temperaturą bezwzględną. Temperatura jest miarą średniej energii ruchu chaotycznego; dla gazu jednoatomowego \(\langle E_k\rangle=3k_BT/2\).
+
+Przemiana izotermiczna zachodzi przy stałej temperaturze, zatem \(pV=\mathrm{const}\). W przemianie izobarycznej \(V/T=\mathrm{const}\), a w izochorycznej \(p/T=\mathrm{const}\). Dla przemiany adiabatycznej nie ma wymiany ciepła z otoczeniem; dla odwracalnej przemiany gazu doskonałego \(pV^\kappa=\mathrm{const}\), gdzie \(\kappa=C_p/C_V\). Praca gazu to \(W=\int p\,dV\), przy czym znak zależy od przyjętej konwencji.
+
+Wykresy przemian na diagramie \(p(V)\) pozwalają porównywać wykonywaną pracę z polem pod krzywą. W modelu kinetyczno-molekularnym ciśnienie wynika z przekazywania pędu ściankom naczynia przez zderzające się cząsteczki. Model jest dobrym przybliżeniem przy niezbyt dużych gęstościach i temperaturach, dla których oddziaływania międzycząsteczkowe nie dominują.
+
+\section{10. Pierwsza zasada termodynamiki. Zasada ekwipartycji energii}
+Pierwsza zasada termodynamiki jest zasadą zachowania energii dla układu makroskopowego. Przy konwencji, w której \(W\) oznacza pracę wykonaną przez układ, zapisuje się ją jako \(\Delta U=Q-W\), gdzie \(\Delta U\) jest zmianą energii wewnętrznej, a \(Q\) ciepłem dostarczonym układowi. Ciepło i praca są sposobami przekazywania energii, nie zaś funkcjami stanu; energia wewnętrzna jest funkcją stanu.
+
+Dla gazu doskonałego energia wewnętrzna zależy wyłącznie od temperatury. W gazie jednoatomowym \(U=3nRT/2\), a zmiana energii wynosi \(\Delta U=nC_V\Delta T\). W przemianie izochorycznej praca jest zerowa, w izotermicznej gazu doskonałego \(\Delta U=0\), a w adiabatycznej \(Q=0\). Zależności te pozwalają analizować cykle termodynamiczne i bilans energii urządzeń.
+
+Zasada ekwipartycji energii głosi, że w klasycznej równowadze termicznej każdemu niezależnemu kwadratowemu składnikowi energii przypada średnio \(k_BT/2\). Cząsteczka gazu jednoatomowego ma trzy translacyjne stopnie swobody, zatem średnia energia na cząsteczkę wynosi \(3k_BT/2\). Dla gazu dwuatomowego w odpowiednim zakresie temperatur istotne są także stopnie rotacyjne. Drgania mogą być „zamrożone” kwantowo w niskich temperaturach. Ograniczenia klasycznej ekwipartycji prowadzą do potrzeby opisu kwantowego.
+
+\section{11. Druga zasada termodynamiki. Ciepło zredukowane, entropia}
+Druga zasada termodynamiki określa kierunek procesów naturalnych i ograniczenia przemiany ciepła w pracę. Jej sformułowanie Clausiusa mówi, że ciepło nie przepływa samorzutnie od ciała zimniejszego do cieplejszego. Sformułowanie Kelvina-Plancka wyklucza silnik cieplny, który w cyklu zamienia całe pobrane ciepło na pracę, bez innych skutków. Zasada ta nie przeczy zachowaniu energii, lecz ogranicza możliwe przemiany energii.
+
+Dla procesu odwracalnego ciepło zredukowane ma postać \(\delta Q_{\rm odwr}/T\). Zmianę entropii definiuje się przez \(dS=\delta Q_{\rm odwr}/T\), a dla procesu odwracalnego między stanami \(S_2-S_1=\int_1^2\delta Q_{\rm odwr}/T\). Entropia jest funkcją stanu. W układzie izolowanym entropia nie maleje: \(\Delta S\geq0\). Równość dotyczy granicznego procesu odwracalnego, a nierówność procesu nieodwracalnego.
+
+Dla wymiany ciepła między ciałami o różnych temperaturach, tarcia, dyfuzji i swobodnego rozprężania entropia całkowita rośnie. Silnik Carnota pracujący między temperaturami \(T_h\) i \(T_c\) ma maksymalną sprawność \(\eta_C=1-T_c/T_h\). Entropia pozwala ilościowo określić nieodwracalność i wyjaśnia, dlaczego rzeczywiste silniki nie osiągają sprawności idealnej.
+
+\section{12. Siły spójności: napięcie powierzchniowe, włoskowatość. Ruchy Browna}
+Siły spójności są siłami oddziaływania między cząsteczkami tej samej substancji. W głębi cieczy cząsteczka jest otoczona sąsiadami ze wszystkich stron, natomiast na powierzchni występuje niezrównoważenie oddziaływań. Powoduje to istnienie napięcia powierzchniowego \(\sigma\), definiowanego jako siła przypadająca na jednostkę długości brzegu powierzchni lub jako energia potrzebna do zwiększenia powierzchni o jednostkę. Jednostką jest \(\mathrm{N/m}\), równoważna \(\mathrm{J/m^2}\). Ciecz dąży do minimalizacji powierzchni, co tłumaczy kulisty kształt małych kropli.
+
+Włoskowatość to zjawisko podnoszenia lub obniżania cieczy w cienkiej rurce. Zależy od napięcia powierzchniowego, promienia rurki, gęstości cieczy i kąta zwilżania. Dla rurki o promieniu \(r\) wysokość podniesienia wynosi \(h=2\sigma\cos\theta/(\rho gr)\). Gdy ciecz zwilża ścianki, menisk jest wklęsły i ciecz się podnosi; przy braku zwilżania może się obniżać.
+
+Ruchy Browna to chaotyczne ruchy drobnych cząstek zawieszonych w płynie, wywołane niesymetrycznymi zderzeniami z cząsteczkami ośrodka. Ich analiza stanowiła ważny dowód kinetyczno-molekularnej budowy materii. W trzech wymiarach średni kwadrat przemieszczenia w czasie \(t\) wynosi \(\langle r^2\rangle=6Dt\), gdzie \(D\) jest współczynnikiem dyfuzji. Ruchy Browna łączą opis mikroskopowy z prawami statystyki.
+
+\section{13. Zjawiska transportu w gazach: dyfuzja, przewodnictwo cieplne, lepkość, przewodnictwo elektryczne}
+Zjawiska transportu polegają na przenoszeniu wielkości fizycznych wskutek niejednorodności ośrodka. Dyfuzja jest transportem cząstek wynikającym z gradientu stężenia. Prawo Ficka zapisuje się jako \(\vec j=-D\nabla n\), gdzie \(D\) jest współczynnikiem dyfuzji, a \(n\) koncentracją. Strumień skierowany jest od większego do mniejszego stężenia. W gazach dyfuzja wynika z chaotycznego ruchu cząsteczek i zderzeń.
+
+Przewodnictwo cieplne opisuje przenoszenie energii od obszarów cieplejszych do chłodniejszych. Prawo Fouriera ma postać \(\vec q=-\kappa\nabla T\), gdzie \(\kappa\) jest przewodnością cieplną. Lepkość opisuje transport pędu między sąsiednimi warstwami płynu poruszającymi się z różnymi prędkościami. Dla płynu Newtonowskiego naprężenie ścinające jest proporcjonalne do gradientu prędkości, a współczynnikiem proporcjonalności jest lepkość dynamiczna \(\eta\).
+
+Przewodnictwo elektryczne w gazie wymaga obecności nośników ładunku, np. elektronów i jonów powstałych wskutek jonizacji. Pole elektryczne nadaje im uporządkowaną prędkość dryfu, a zderzenia z cząsteczkami ograniczają ruch. Współczynnik przewodnictwa zależy od koncentracji i ruchliwości nośników. Wspólnym źródłem zjawisk transportu jest mikroskopowy ruch cząstek i ich oddziaływania, natomiast makroskopowy opis wykorzystuje gradienty i współczynniki transportu.
+
+\section{14. Potencjał elektryczny, natężenie pola elektrycznego. Strumień pola elektrycznego. Prawo Gaussa}
+Pole elektryczne opisuje oddziaływanie ładunków. Natężenie pola definiuje się jako siłę działającą na dodatni ładunek próbny podzieloną przez jego wartość: \(\vec E=\vec F/q\). Dla ładunku punktowego \(Q\) w próżni \(\vec E=(1/4\pi\varepsilon_0)(Q/r^2)\hat r\). Potencjał elektryczny \(\varphi\) jest energią potencjalną przypadającą na jednostkę ładunku, \( \varphi=E_p/q\). Różnica potencjałów określa pracę pola przy przenoszeniu ładunku: \(W=q(\varphi_A-\varphi_B)\). Dla pola elektrostatycznego \(\vec E=-\nabla\varphi\).
+
+Strumień pola elektrycznego przez powierzchnię \(S\) definiuje całka \(\Phi_E=\int_S\vec E\cdot d\vec S\). Prawo Gaussa stwierdza, że całkowity strumień przez zamkniętą powierzchnię jest równy ładunkowi wewnątrz podzielonemu przez przenikalność próżni:
+\[
+\oint_S\vec E\cdot d\vec S=\frac{Q_{\rm wew}}{\varepsilon_0}.
+\]
+Prawo jest szczególnie użyteczne dla rozkładów o wysokiej symetrii, np. sferycznej, cylindrycznej i płaskiej.
+
+Dla naładowanej kuli można dobrać sferyczną powierzchnię Gaussa, na której wartość pola jest stała. Wewnątrz przewodnika w stanie równowagi elektrostatycznej pole jest równe zeru, a nadmiarowy ładunek znajduje się na powierzchni. Prawo Gaussa jest jednym z podstawowych równań Maxwella i wiąże źródła pola z jego strumieniem.
+
+\section{15. Dielektryk w polu elektrycznym. Polaryzacja, elektrostrykcja, piezoelektryczność, ferroelektryki. Pojemność kondensatora z dielektrykiem}
+Dielektryk jest izolatorem, w którym pole elektryczne powoduje niewielkie przesunięcie ładunków związanych lub uporządkowanie dipoli. Zjawisko to nazywa się polaryzacją, a moment dipolowy przypadający na jednostkę objętości opisuje wektor polaryzacji \(\vec P\). W ośrodku liniowym i izotropowym \(\vec P=\varepsilon_0\chi_e\vec E\), gdzie \(\chi_e\) jest podatnością elektryczną. Wprowadza się wektor indukcji elektrycznej \(\vec D=\varepsilon_0\vec E+\vec P\).
+
+Wstawienie dielektryka do kondensatora zwiększa jego pojemność. Dla kondensatora płaskiego całkowicie wypełnionego jednorodnym dielektrykiem \(C=\varepsilon_0\varepsilon_r A/d\), gdzie \(A\) jest polem okładek, \(d\) odległością, a \(\varepsilon_r\) względną przenikalnością elektryczną. Dielektryk zmniejsza pole przy ustalonym ładunku, a pojemność rośnie \(\varepsilon_r\)-krotnie.
+
+Elektrostrykcja to zmiana wymiarów dielektryka pod wpływem pola, zwykle zależna kwadratowo od pola. Piezoelektryczność polega na powstawaniu polaryzacji przy mechanicznym odkształceniu i odwrotnie – odkształcenia pod wpływem pola elektrycznego. Ferroelektryki mają spontaniczną polaryzację, którą można przełączać polem; wykazują pętlę histerezy. Zjawiska te wykorzystuje się w czujnikach, przetwornikach, rezonatorach i pamięciach.
+
+\section{16. Klasyczny model przewodnictwa elektrycznego}
+Klasyczny model przewodnictwa Drudego traktuje elektrony przewodnictwa w metalu jako gaz cząstek poruszających się między zderzeniami z jonami sieci krystalicznej. W nieobecności pola ich ruch jest chaotyczny i średni prąd wynosi zero. Po przyłożeniu pola elektrycznego elektrony uzyskują niewielką prędkość dryfu przeciwną do kierunku pola. Gęstość prądu można zapisać jako \(\vec j=nq\vec v_d\), gdzie \(n\) jest koncentracją nośników, \(q\) ich ładunkiem, a \(\vec v_d\) prędkością dryfu.
+
+W modelu Drudego przewodnictwo wynosi \(\sigma=n e^2\tau/m\), gdzie \(\tau\) jest średnim czasem między zderzeniami. Zależność \(\vec j=\sigma\vec E\) prowadzi do lokalnej postaci prawa Ohma. Zderzenia powodują rozpraszanie energii i ogrzewanie przewodnika. Model wyjaśnia jakościowo prawo Ohma i zależność oporu od temperatury, choć jego klasyczne założenia nie opisują poprawnie wszystkich własności metali.
+
+Współczesny opis wymaga mechaniki kwantowej i statystyki Fermiego-Diraca. Elektrony w metalu zajmują stany pasmowe, a przewodnictwo zależy od struktury pasm, obsadzeń stanów i rozpraszania na fononach, defektach oraz domieszkach. Model klasyczny pozostaje jednak użytecznym punktem wyjścia do zrozumienia ruchliwości nośników i makroskopowego przewodnictwa.
+
+\section{17. Prawo Ohma. Siła elektromotoryczna. Reguły Kirchhoffa. Praca i moc prądu}
+Prawo Ohma dla elementu obwodu mówi, że przy stałych warunkach fizycznych napięcie jest proporcjonalne do natężenia: \(U=RI\). Opór \(R\) zależy od materiału i geometrii przewodnika; dla jednorodnego drutu \(R=\rho L/A\). W ujęciu lokalnym \(\vec j=\sigma\vec E\). Siła elektromotoryczna źródła \(\mathcal E\) jest pracą sił nieelektrostatycznych przypadającą na jednostkę ładunku, a nie siłą mechaniczną. Dla źródła o oporze wewnętrznym \(r\) napięcie na zaciskach przy poborze prądu wynosi \(U=\mathcal E-Ir\).
+
+Pierwsze prawo Kirchhoffa wynika z zasady zachowania ładunku: suma natężeń prądów wpływających do węzła jest równa sumie prądów wypływających. Drugie prawo Kirchhoffa wynika z zachowania energii: algebraiczna suma zmian potencjału wzdłuż zamkniętego oczka jest równa zeru. Przy rozwiązywaniu obwodów należy konsekwentnie przyjąć kierunki prądów i obiegi oczek; ujemny wynik oznacza kierunek przeciwny do założonego.
+
+Praca prądu w czasie \(t\) wynosi \(W=UIt\), a moc \(P=UI=I^2R=U^2/R\) dla opornika. Ciepło Joule’a-Lenza wydzielone w oporze jest równe \(Q=I^2Rt\). W obwodach prądu przemiennego należy odróżniać wartości chwilowe, skuteczne i moc czynną; proste wzory powyżej odnoszą się do prądu stałego lub odpowiednio rozumianych wartości.
+
+\section{18. Prawo Ampere'a; oddziaływanie dwóch przewodników z prądem. Indukcja elektromagnetyczna; prawo Faradaya}
+Prawo Ampère’a dla magnetostatyki wiąże cyrkulację pola magnetycznego z prądem obejmowanym przez kontur: \(\oint\vec B\cdot d\vec l=\mu_0I_{\rm obejm}\). Dla długiego prostoliniowego przewodnika pole ma wartość \(B=\mu_0I/(2\pi r)\). Dwa równoległe przewodniki, w których płyną prądy w tym samym kierunku, przyciągają się, a przy przeciwnych kierunkach – odpychają. Siła na jednostkę długości wynosi \(F/L=\mu_0I_1I_2/(2\pi d)\).
+
+Indukcja elektromagnetyczna polega na powstawaniu siły elektromotorycznej, gdy zmienia się strumień pola magnetycznego przez obwód. Prawo Faradaya-Lenza ma postać \(\mathcal E=-d\Phi_B/dt\), gdzie \(\Phi_B=\int\vec B\cdot d\vec S\). Znak minus wyraża regułę Lenza: prąd indukowany wytwarza pole przeciwdziałające zmianie strumienia, która go wywołała. Zmiana strumienia może wynikać ze zmiany pola, powierzchni obwodu lub jego orientacji.
+
+Zjawisko wykorzystuje się w prądnicach, transformatorach, indukcyjnych czujnikach i hamulcach. Dla cewki o \(N\) zwojach \(\mathcal E=-N\,d\Phi_B/dt\). W przewodniku poruszającym się w polu może występować siła elektromotoryczna ruchu. Indukcja pokazuje, że zmienne pole magnetyczne wytwarza pole elektryczne o liniach zamkniętych.
+
+\section{19. Materia w polu magnetycznym. Diamagnetyki, paramagnetyki, ferromagnetyki}
+Odpowiedź materii na zewnętrzne pole magnetyczne opisuje magnetyzacja \(\vec M\), czyli moment magnetyczny przypadający na jednostkę objętości. W ośrodku liniowym \( \vec M=\chi_m\vec H\), gdzie \(\chi_m\) jest podatnością magnetyczną. Związek między indukcją, natężeniem pola i magnetyzacją zapisuje się jako \(\vec B=\mu_0(\vec H+\vec M)\). Dla prostego ośrodka liniowego \(\vec B=\mu_0\mu_r\vec H\).
+
+Diamagnetyki wytwarzają magnetyzację przeciwną do pola zewnętrznego, mają małą ujemną podatność i są słabo wypychane z obszaru silniejszego pola. Zjawisko wynika z indukowanej odpowiedzi orbitalnej elektronów i występuje w pewnym stopniu we wszystkich materiałach. Paramagnetyki mają niezerowe momenty magnetyczne atomów lub jonów, które częściowo ustawiają się zgodnie z polem; podatność jest dodatnia i zwykle maleje wraz ze wzrostem temperatury zgodnie z prawem Curie.
+
+Ferromagnetyki wykazują silne uporządkowanie momentów magnetycznych wskutek oddziaływania wymiennego. Dzielą się na domeny, a zależność magnetyzacji od pola może wykazywać histerezę, remanencję i pole koercji. Powyżej temperatury Curie ferromagnetyk przechodzi w stan paramagnetyczny. Materiały ferromagnetyczne wykorzystuje się w rdzeniach transformatorów, elektromagnesach i nośnikach zapisu, przy czym straty histerezowe mają znaczenie energetyczne.
+
+\section{20. Drgania własne i wymuszone w obwodach LC i RLC. Rezonans obwodu}
+Obwód LC składa się z kondensatora o pojemności \(C\) i cewki o indukcyjności \(L\). Po naładowaniu kondensatora i zamknięciu obwodu energia oscyluje między polem elektrycznym kondensatora \(E_C=q^2/(2C)\) a polem magnetycznym cewki \(E_L=Li^2/2\). Równanie drgań ma postać \(L\ddot q+q/C=0\), a częstość własna \(\omega_0=1/\sqrt{LC}\). Idealny obwód LC nie traci energii.
+
+W obwodzie RLC opór powoduje rozpraszanie energii. Równanie swobodnych drgań to \(L\ddot q+R\dot q+q/C=0\). W zależności od wartości tłumienia obwód może wykonywać drgania gasnące albo wracać do równowagi bez oscylacji. Obwód zasilany napięciem sinusoidalnym wykonuje drgania wymuszone. Impedancja szeregowego RLC ma moduł \(Z=\sqrt{R^2+(\omega L-1/(\omega C))^2}\).
+
+Rezonans napięć i prądu w szeregowym RLC występuje przy \(\omega_0=1/\sqrt{LC}\), gdy reaktancje indukcyjna i pojemnościowa się znoszą. Wtedy impedancja jest minimalna i prąd osiąga maksimum. Dobroć \(Q=\omega_0L/R\) określa ostrość rezonansu i stosunek energii magazynowanej do traconej w cyklu, z odpowiednim czynnikiem konwencji. Obwody rezonansowe służą do selekcji częstotliwości, strojenia i filtracji sygnałów.
+
+\section{21. Zasada superpozycji fal; fale stojące, dudnienia}
+Zasada superpozycji mówi, że w ośrodku liniowym wypadkowe wychylenie jest sumą wychyleń wywołanych przez poszczególne fale. Dwie fale harmoniczne o tej samej częstotliwości mogą interferować, dając wypadkową o amplitudzie zależnej od różnicy faz. Jeżeli fale biegną w przeciwnych kierunkach, mogą utworzyć falę stojącą. Dla jednakowych amplitud i częstości suma fal \(y_1=A\cos(kx-\omega t)\) i \(y_2=A\cos(kx+\omega t)\) wynosi \(y=2A\cos(kx)\cos(\omega t)\).
+
+Fala stojąca ma nieruchome węzły, w których amplituda jest zerowa, oraz strzałki, w których amplituda jest maksymalna. Odległość między sąsiednimi węzłami wynosi \(\lambda/2\), a między węzłem i sąsiednią strzałką \(\lambda/4\). Fale stojące powstają np. na strunie zamocowanej na końcach i w rezonatorach akustycznych. Warunki brzegowe dopuszczają tylko określone mody własne.
+
+Dudnienia występują przy nałożeniu fal o zbliżonych częstotliwościach. Wypadkowa amplituda zmienia się okresowo, a częstotliwość dudnień wynosi \(f_d=|f_1-f_2|\). Zjawisko wykorzystuje się do strojenia instrumentów i porównywania częstotliwości. Należy odróżniać zmianę amplitudy dudnień od samej częstotliwości szybkich oscylacji, która jest bliska średniej z obu częstotliwości.
+
+\section{22. Interferencja fal z dwóch źródeł. Doświadczenie Younga. Interferometr Michelsona}
+Interferencja jest skutkiem superpozycji fal spójnych, czyli mających stałą różnicę faz. Dla dwóch źródeł punktowych o tej samej częstotliwości różnica dróg \(\Delta r\) wyznacza różnicę faz \(\Delta\phi=2\pi\Delta r/\lambda\). Wzmocnienie występuje, gdy \(\Delta r=m\lambda\), a wygaszenie, gdy \(\Delta r=(m+1/2)\lambda\), dla całkowicie zgodnych amplitud i odpowiednich warunków polaryzacji. W dalekim polu różnica dróg zależy od kąta obserwacji i rozstawu źródeł.
+
+W doświadczeniu Younga światło z jednego źródła oświetla dwie wąskie szczeliny, które stają się źródłami spójnymi. Na ekranie powstają jasne i ciemne prążki. Dla odległości szczelin \(d\), ekranu \(L\gg d\) i małych kątów położenia jasnych prążków spełniają \(y_m\approx m\lambda L/d\), a odstęp prążków wynosi \(\Delta y=\lambda L/d\). Pomiar prążków pozwala wyznaczać długość fali.
+
+Interferometr Michelsona rozdziela wiązkę na dwa ramiona, odbija ją od luster i ponownie łączy. Różnica dróg optycznych decyduje o obrazie interferencyjnym. Przesunięcie lustra o \(\lambda/2\) zmienia różnicę dróg o jedną długość fali, powodując przejście jednego prążka. Interferometr służy do precyzyjnych pomiarów długości, współczynników załamania i bardzo małych przemieszczeń.
+
+\section{23. Zjawisko Dopplera dla fal mechanicznych i elektromagnetycznych; fala uderzeniowa}
+Zjawisko Dopplera polega na zmianie obserwowanej częstotliwości fali wskutek względnego ruchu źródła i obserwatora. Dla fal mechanicznych w nieruchomym ośrodku, przy zbliżaniu się źródła i obserwatora, częstotliwość rośnie. W typowej konwencji \(f'=f(v\pm v_o)/(v\mp v_s)\), gdzie \(v\) jest prędkością fali w ośrodku, \(v_o\) prędkością obserwatora, a \(v_s\) prędkością źródła; znaki dobiera się zgodnie z kierunkiem ruchu. W przypadku dźwięku istotny jest układ ośrodka, ponieważ to względem niego rozchodzi się fala.
+
+Dla światła w próżni efekt Dopplera jest relatywistyczny i nie wymaga ośrodka. Dla ruchu radialnego źródła względem obserwatora częstotliwość zależy od czynnika \(\sqrt{(1-\beta)/(1+\beta)}\) przy oddalaniu się, gdzie \(\beta=v/c\). Oddalanie powoduje przesunięcie ku czerwieni, a zbliżanie ku błękitowi. Efekt wykorzystuje się w astronomii, radarach i pomiarach przepływu.
+
+Fala uderzeniowa powstaje, gdy źródło zaburzeń porusza się w ośrodku szybciej niż rozchodzą się w nim małe zaburzenia, czyli przekracza prędkość dźwięku. Fronty fal nakładają się w stożek Macha, którego kąt spełnia \(\sin\mu=c_s/v\). Przejściu fali uderzeniowej towarzyszą skokowe zmiany ciśnienia, gęstości i temperatury.
+
+\section{24. Przegląd widma fal elektromagnetycznych; cechy rodzajów promieniowania}
+Widmo elektromagnetyczne obejmuje fale o różnych częstotliwościach i długościach, od fal radiowych po promieniowanie gamma. W próżni wszystkie rozchodzą się z prędkością \(c\), a ich długość i częstotliwość wiąże zależność \(c=\lambda f\). Energia pojedynczego fotonu wynosi \(E=hf=hc/\lambda\), dlatego rośnie wraz z częstotliwością. Granice zakresów są umowne i mogą się częściowo różnić w zależności od konwencji.
+
+Fale radiowe mają długie długości i są wykorzystywane w łączności. Mikrofale służą m.in. radarom, telekomunikacji i ogrzewaniu dielektrycznemu. Podczerwień wiąże się z promieniowaniem cieplnym i jest stosowana w termowizji. Światło widzialne stanowi niewielki zakres czułości ludzkiego oka. Ultrafiolet może wywoływać reakcje fotochemiczne i fluorescencję, a jego bardziej energetyczne zakresy mogą uszkadzać tkanki.
+
+Promieniowanie rentgenowskie ma dużą przenikliwość i jest wykorzystywane w diagnostyce oraz badaniu struktury materii. Promieniowanie gamma pochodzi m.in. z przemian jądrowych i procesów wysokoenergetycznych. Podział na promieniowanie jonizujące i niejonizujące zależy od energii i rodzaju oddziaływania z materią. W zastosowaniach należy uwzględniać dawkę, ekranowanie i zasady ochrony radiologicznej.
+
+\section{25. Dyfrakcja wiązki świetlnej; zasada Huygensa-Fresnela, dyfrakcja Fraunhofera na szczelinie, siatka dyfrakcyjna}
+Dyfrakcja jest ugięciem i rozchodzeniem się fal za przeszkodami oraz przez otwory, szczególnie widocznym, gdy rozmiary układu są porównywalne z długością fali. Zasada Huygensa-Fresnela zakłada, że każdy punkt frontu fali może być traktowany jako źródło fal wtórnych, których interferencja wyznacza nowy front. Zasada ta łączy geometryczny opis propagacji z falową naturą światła.
+
+Dyfrakcja Fraunhofera zachodzi w warunkach dalekiego pola lub przy zastosowaniu układu soczewek. Dla pojedynczej szczeliny o szerokości \(a\) minima natężenia spełniają \(a\sin\theta=m\lambda\), gdzie \(m=\pm1,\pm2,\ldots\). Obraz ma szerokie maksimum centralne i słabsze maksima boczne. Dla małych kątów szerokość maksimum centralnego na ekranie odległym o \(L\) jest w przybliżeniu \(2L\lambda/a\).
+
+Siatka dyfrakcyjna składa się z wielu równoległych szczelin o okresie \(d\). Maksima główne spełniają \(d\sin\theta=m\lambda\). Wielka liczba szczelin powoduje ostre maksima i umożliwia precyzyjny pomiar długości fali. Zdolność rozdzielcza siatki rośnie z rzędem widma i liczbą oświetlonych szczelin. Dyfrakcja stanowi podstawę działania spektrometrów siatkowych.
+
+\section{26. Optyka geometryczna. Lupa, luneta, mikroskop}
+Optyka geometryczna jest przybliżeniem optyki falowej, w którym długość fali jest znacznie mniejsza od rozmiarów elementów układu, a światło opisuje się promieniami. Promienie w jednorodnym ośrodku biegną po liniach prostych, na granicy ośrodków ulegają odbiciu i załamaniu. Dla cienkiej soczewki w przybliżeniu paraaksjalnym obowiązuje równanie \(1/f=1/x+1/y\), przy odpowiedniej konwencji znaków, gdzie \(f\) jest ogniskową, \(x\) odległością przedmiotu, a \(y\) odległością obrazu.
+
+Lupa jest soczewką skupiającą, która tworzy obraz pozorny, prosty i powiększony, gdy przedmiot znajduje się wewnątrz ogniskowej. Powiększenie kątowe zależy od ogniskowej i przyjętej odległości dobrego widzenia. Luneta służy do obserwacji odległych obiektów; obiektyw tworzy obraz pośredni, a okular działa jak lupa. W lunecie Keplera obiektyw i okular są skupiające, a obraz końcowy jest odwrócony.
+
+Mikroskop optyczny składa się z obiektywu o krótkiej ogniskowej i okularu. Obiektyw tworzy rzeczywisty, powiększony obraz pośredni, który okular dodatkowo powiększa kątowo. Całkowite powiększenie jest iloczynem powiększenia liniowego obiektywu i kątowego okularu. Rozdzielczość mikroskopu ogranicza dyfrakcja, dlatego samo zwiększanie powiększenia nie zawsze ujawnia nowe szczegóły.
+
+\section{27. Oddziaływanie światła z ośrodkiem; odbicie, załamanie, całkowite wewnętrzne odbicie, dyspersja}
+Na granicy dwóch ośrodków światło może ulegać odbiciu i załamaniu. Prawo odbicia stwierdza, że kąt odbicia jest równy kątowi padania, a promień padający, odbity i normalna leżą w jednej płaszczyźnie. Prawo Snelliusa ma postać \(n_1\sin\theta_1=n_2\sin\theta_2\), gdzie \(n_i\) są współczynnikami załamania. Współczynnik załamania określa \(n=c/v\), gdzie \(v\) jest prędkością fazową światła w ośrodku.
+
+Przy przejściu z ośrodka optycznie gęstszego do rzadszego kąt załamania jest większy. Dla kąta padania większego od kąta granicznego następuje całkowite wewnętrzne odbicie; \(\sin\theta_g=n_2/n_1\) dla \(n_1>n_2\). Zjawisko wykorzystuje się w światłowodach i pryzmatach. Dyspersja oznacza zależność współczynnika załamania od długości fali. W dyspersji normalnej współczynnik zwykle maleje ze wzrostem długości fali w obszarach przezroczystości.
+
+Dyspersja anormalna występuje w pobliżu pasm absorpcyjnych, gdzie zależność współczynnika od częstotliwości może mieć odmienny przebieg i jest związana z silną absorpcją. Rozszczepienie światła białego przez pryzmat wynika z dyspersji: różne długości fal załamują się pod różnymi kątami. Opis ilościowy wymaga uwzględnienia zarówno fazy, jak i amplitudy fali w ośrodku.
+
+\section{28. Polaryzacja fal elektromagnetycznych: prawo Malusa, kąt Brewstera, dwójłomność, aktywność optyczna}
+Fala elektromagnetyczna jest poprzeczna, a polaryzacja opisuje kierunek i sposób zmian wektora pola elektrycznego. Światło naturalne jest nieuporządkowaną mieszaniną stanów polaryzacji. Polaryzator przepuszcza składową pola w określonym kierunku. Dla światła liniowo spolaryzowanego przechodzącego przez analizator pod kątem \(\theta\) względem osi polaryzacji natężenie spełnia prawo Malusa: \(I=I_0\cos^2\theta\).
+
+Kąt Brewstera to kąt padania, przy którym światło odbite od granicy dwóch dielektryków jest całkowicie liniowo spolaryzowane. Dla padania z ośrodka o współczynniku \(n_1\) do ośrodka \(n_2\) zachodzi \(\tan\theta_B=n_2/n_1\). Przy tym kącie promień odbity i załamany są wzajemnie prostopadłe. Dwójłomność kryształów polega na tym, że współczynnik załamania zależy od kierunku polaryzacji i kierunku propagacji; wiązka może rozdzielić się na promień zwyczajny i nadzwyczajny.
+
+Dwójłomność wymuszona powstaje pod wpływem zewnętrznego pola elektrycznego lub naprężeń. Aktywność optyczna polega na skręcaniu płaszczyzny polaryzacji światła liniowo spolaryzowanego podczas przejścia przez niektóre substancje. Kąt skręcenia zależy od długości drogi, stężenia i długości fali. Zjawiska polaryzacyjne wykorzystuje się w polarymetrii, ekranach ciekłokrystalicznych i badaniu naprężeń.
+
+\section{29. Naturalna szerokość linii widmowej - czas życia stanów wzbudzonych. Stany metastabilne}
+Linie widmowe nie mają idealnie zerowej szerokości. Jednym ze źródeł poszerzenia jest naturalna szerokość wynikająca z ograniczonego czasu życia stanu wzbudzonego. Stan wzbudzony może ulec spontanicznej emisji fotonu i przejść do stanu o niższej energii. Krótszy czas życia oznacza większą niepewność energii, co wiąże się z relacją nieoznaczoności energia–czas. Dla poziomu o czasie życia \(\tau\) szerokość energetyczna jest rzędu \(\Delta E\sim\hbar/\tau\), a szerokość częstotliwościowa rzędu \(\Delta\omega\sim1/\tau\), przy czym dokładne współczynniki zależą od definicji szerokości linii.
+
+Naturalny profil linii dla pojedynczego przejścia ma często kształt Lorentza. Należy odróżnić poszerzenie naturalne od poszerzenia Dopplerowskiego, zderzeniowego i aparaturowego. Poszerzenie Dopplerowskie wynika z rozkładu prędkości atomów, a zderzeniowe ze skracania czasu koherencji wskutek zderzeń.
+
+Stany metastabilne są stanami wzbudzonymi o relatywnie długim czasie życia, ponieważ przejście do niższego stanu jest zabronione lub silnie osłabione przez reguły wyboru. Mogą gromadzić obsadzenie i odgrywają rolę w laserach, fluorescencji opóźnionej oraz procesach atomowych. Długi czas życia oznacza wąską naturalną szerokość energetyczną, co jest ważne w precyzyjnej spektroskopii.
+
+\section{30. Doświadczenie Rutherforda - wpływ rezultatów na model budowy atomu}
+Doświadczenie Rutherforda polegało na bombardowaniu cienkiej folii metalicznej cząstkami alfa i obserwacji ich rozpraszania. Większość cząstek przechodziła przez folię bez dużego odchylenia, część odchylała się pod niewielkimi kątami, a bardzo mała liczba ulegała rozproszeniu pod dużymi kątami lub zawracała. Wynik był niezgodny z modelem atomu, w którym dodatni ładunek i masa są rozłożone równomiernie w całej objętości.
+
+Rutherford wyjaśnił obserwacje, proponując model jądrowy: niemal cały dodatni ładunek i masa atomu są skupione w bardzo małym jądrze, a elektrony zajmują obszar znacznie większy. Silne odchylenia są możliwe podczas bliskiego przejścia cząstki alfa obok jądra, gdzie działa silne odpychanie kulombowskie. Większość cząstek przechodzi daleko od jądra, ponieważ jego rozmiar jest bardzo mały w porównaniu z rozmiarami atomu.
+
+Model jądrowy był przełomem, ale klasyczny obraz elektronów krążących po orbitach miał problemy: przyspieszony ładunek powinien promieniować, tracić energię i spadać na jądro. Nie wyjaśniał też dyskretnych widm atomowych. Problemy te doprowadziły do modeli kwantowych, w których stany elektronów mają określone energie.
+
+\section{31. Widmo promieniowania rentgenowskiego; promieniowanie charakterystyczne i hamowania}
+Promieniowanie rentgenowskie powstaje m.in. w lampie rentgenowskiej, gdy elektrony przyspieszone napięciem uderzają w metalową anodę. Widmo zawiera składnik ciągły – promieniowanie hamowania – oraz ostre linie charakterystyczne materiału anody. Promieniowanie hamowania powstaje wskutek zmiany prędkości elektronów w polu jąder. Maksymalna energia fotonu jest ograniczona energią kinetyczną elektronu \(eU\), stąd minimalna długość fali \(\lambda_{\min}=hc/(eU)\), znana jako prawo Duane’a-Hunta.
+
+Promieniowanie charakterystyczne powstaje, gdy elektron padający wybije elektron z wewnętrznej powłoki atomowej. Elektron z wyższej powłoki przechodzi na powstałe miejsce, emitując foton o energii równej różnicy energii poziomów. Linie oznacza się m.in. jako \(K_\alpha\), gdy przejście zachodzi z powłoki L na K. Energia linii zależy od liczby atomowej pierwiastka i struktury powłok.
+
+Widmo rentgenowskie pozwala identyfikować pierwiastki, badać strukturę krystaliczną i prowadzić diagnostykę obrazową. Promieniowanie jest jonizujące, dlatego jego zastosowanie wymaga kontroli ekspozycji, kolimacji wiązki i ekranowania. W dyfrakcji rentgenowskiej wykorzystuje się warunek Bragga \(2d\sin\theta=n\lambda\) do określania odległości międzypłaszczyznowych w kryształach.
+
+\section{32. Wzbudzanie i deekscytacja jąder i powłok atomowych: gamma, X, konwersja wewnętrzna, Auger, Mössbauer}
+Jądro atomowe i powłoki elektronowe mogą przechodzić między dyskretnymi poziomami energii. Wzbudzone jądro może oddać energię przez emisję fotonu gamma. Promieniowanie gamma ma pochodzenie jądrowe, natomiast promieniowanie rentgenowskie zwykle wiąże się z procesami elektronowymi lub hamowaniem elektronów. Energia emitowanego fotonu odpowiada różnicy energii stanów, z uwzględnieniem odrzutu jądra.
+
+Zamiast emisji gamma może zajść konwersja wewnętrzna: energia przejścia jądrowego zostaje przekazana elektronowi atomowemu, który opuszcza atom. Powstała luka w powłoce jest następnie zapełniana, czemu może towarzyszyć emisja promieniowania X lub elektronu Augera. Elektron Augera jest emitowany, gdy energia relaksacji atomu zostaje przekazana innemu elektronowi, a nie fotonowi. Są to konkurencyjne kanały deekscytacji.
+
+Zjawisko Mössbauera polega na bezodrzutowej emisji i absorpcji rezonansowej promieniowania gamma przez jądra związane w sieci krystalicznej. Sieć może przejąć pęd z bardzo małą energią odrzutu, co umożliwia ostre rezonanse. Niewielkie przesunięcia energii linii pozwalają badać lokalne środowisko jądra, oddziaływania nadsubtelne i efekty relatywistyczne. Spektroskopia Mössbauera jest ważną metodą badania materiałów.
+
+\section{33. Jądro atomowe, jego odkrycie, budowa, własności}
+Jądro atomowe odkryto na podstawie rozpraszania cząstek alfa w doświadczeniu Rutherforda. Jest ono centralną, bardzo małą częścią atomu, zawierającą protony i neutrony, zwane nukleonami. Liczba protonów \(Z\) określa ładunek jądra \(+Ze\) i tożsamość pierwiastka, a liczba masowa \(A=Z+N\) jest sumą protonów i neutronów. Jądra o tym samym \(Z\), lecz różnej liczbie neutronów, to izotopy.
+
+Masa jądra jest mniejsza od sumy mas swobodnych nukleonów. Różnica odpowiada energii wiązania \(E_w=\Delta mc^2\). Energia wiązania na nukleon jest miarą trwałości jądra i osiąga maksimum w pobliżu jąder o średniej masie. Oddziaływanie jądrowe jest krótkiego zasięgu, silne i w przybliżeniu niezależne od ładunku, natomiast protony odpychają się elektrostatycznie.
+
+Jądra charakteryzuje się m.in. promieniem, spinem, momentem magnetycznym, parzystością i energią wzbudzenia. Promień można przybliżyć zależnością \(R=r_0A^{1/3}\). Jądra mogą występować w stanach podstawowych i wzbudzonych, a ich przemiany obejmują emisję cząstek i promieniowania. Stabilność zależy od stosunku neutronów do protonów oraz energii wiązania. Fizyka jądrowa bada strukturę jąder, ich reakcje i zastosowania energetyczne oraz medyczne.
+
+\section{34. Modele jądra atomowego – kroplowy, powłokowy}
+Model kroplowy traktuje jądro jako naładowaną kroplę cieczy jądrowej. Uzasadnia on m.in. przybliżoną stałość gęstości materii jądrowej, krótki zasięg sił jądrowych i zależność promienia \(R\propto A^{1/3}\). Półempiryczny wzór masowy Weizsäckera zawiera składnik objętościowy, powierzchniowy, kulombowski, asymetrii oraz parowania. Model dobrze opisuje ogólne trendy energii wiązania i pomaga zrozumieć rozszczepienie: kropla może ulec deformacji, a odpychanie protonów sprzyja rozdzieleniu.
+
+Model powłokowy zakłada, że nukleony poruszają się w średnim potencjale wytwarzanym przez pozostałe nukleony. Podobnie jak elektrony w atomie, zajmują dyskretne poziomy energetyczne. Uwzględnienie silnego sprzężenia spin–orbita prowadzi do powstania powłok i liczb magicznych, dla których jądra wykazują szczególną trwałość. Liczby magiczne dla protonów lub neutronów wiążą się z zamkniętymi powłokami.
+
+Oba modele są komplementarne. Model kroplowy opisuje własności kolektywne, takie jak drgania, deformacje i rozszczepienie, a powłokowy wyjaśnia szczegóły struktury, spiny i szczególną stabilność wybranych jąder. Współczesne opisy łączą stopnie swobody pojedynczych nukleonów z ruchem kolektywnym jądra.
+
+\section{35. Spontaniczne przemiany jądrowe – rodzaje, teoria}
+Promieniotwórczość naturalna polega na samorzutnych przemianach niestabilnych jąder. W rozpadzie alfa jądro emituje cząstkę \({}^4_2\mathrm{He}\), zmniejszając liczbę masową o 4 i atomową o 2. W rozpadzie beta minus neutron przechodzi w proton, emitując elektron i antyneutrino; liczba masowa pozostaje stała, a \(Z\) rośnie o 1. W rozpadzie beta plus proton przechodzi w neutron, emitując pozyton i neutrino, a \(Z\) maleje o 1. Możliwy jest też wychwyt elektronu. Emisja gamma oznacza przejście wzbudzonego jądra do niższego stanu bez zmiany \(A\) i \(Z\).
+
+Prawo rozpadu promieniotwórczego ma postać \(N(t)=N_0e^{-\lambda t}\), gdzie \(\lambda\) jest stałą rozpadu. Aktywność \(A_{\rm akt}=-dN/dt=\lambda N\), a okres półtrwania \(T_{1/2}=\ln2/\lambda\). W rozpadzie alfa ważną rolę odgrywa efekt tunelowy: cząstka alfa może przeniknąć przez barierę kulombowską mimo energii mniejszej od jej wysokości.
+
+Rozpady beta opisuje oddziaływanie słabe, a emisja neutrino zapewnia zgodność bilansu energii, pędu i momentu pędu. Przemiany jądrowe są procesami statystycznymi: nie można przewidzieć chwili rozpadu pojedynczego jądra, lecz można opisać prawdopodobieństwo rozpadu dużej liczby jąder.
+
+\section{36. Oddziaływanie promieniowania jądrowego z materią}
+Promieniowanie jądrowe oddziałuje z materią przez jonizację, wzbudzenia, rozpraszanie i reakcje jądrowe. Cząstki naładowane, takie jak alfa i beta, tracą energię głównie na jonizację i wzbudzanie atomów. Cząstki alfa mają duży współczynnik jonizacji i krótki zasięg, natomiast elektrony beta są lżejsze i silniej ulegają rozpraszaniu. Zasięg zależy od energii cząstki i właściwości ośrodka.
+
+Promieniowanie gamma i rentgenowskie jest pośrednio jonizujące. Główne mechanizmy oddziaływania fotonów to efekt fotoelektryczny, rozpraszanie Comptona i tworzenie par elektron–pozyton, jeśli energia fotonu przekracza próg \(2m_ec^2\). Natężenie wiązki w prostym modelu osłabiania maleje zgodnie z \(I(x)=I_0e^{-\mu x}\), gdzie \(\mu\) jest liniowym współczynnikiem osłabienia. Neutrony oddziałują głównie przez zderzenia z jądrami i reakcje jądrowe; nie jonizują bezpośrednio, ale mogą wytwarzać cząstki naładowane.
+
+Wielkości dozymetryczne obejmują dawkę pochłoniętą \(D=E/m\), wyrażaną w grejach, oraz dawkę równoważną i skuteczną, uwzględniające rodzaj promieniowania i wrażliwość tkanek. Ochrona radiologiczna opiera się na ograniczaniu czasu ekspozycji, zwiększaniu odległości i stosowaniu odpowiednich osłon. Dobór osłony zależy od rodzaju promieniowania.
+
+\section{37. Rozszczepienie jąder atomowych, energetyka jądrowa}
+Rozszczepienie jądra polega na podziale ciężkiego jądra na dwa fragmenty o średniej masie, zwykle z emisją neutronów i energii. Może zachodzić samorzutnie lub być wywołane pochłonięciem neutronu. Energia uwalnia się, ponieważ produkty rozszczepienia mają większą energię wiązania na nukleon niż bardzo ciężkie jądro początkowe. Typowa energia jednego rozszczepienia jest rzędu setek megaelektronowoltów, głównie jako energia kinetyczna fragmentów.
+
+Neutrony emitowane w rozszczepieniu mogą wywołać kolejne rozszczepienia, tworząc reakcję łańcuchową. Współczynnik mnożenia neutronów \(k_{\rm eff}\) określa jej charakter: układ podkrytyczny ma \(k_{\rm eff}<1\), krytyczny \(k_{\rm eff}=1\), a nadkrytyczny \(k_{\rm eff}>1\). W reaktorze energetycznym reakcja jest kontrolowana przez geometrię rdzenia, moderator, materiały pochłaniające neutrony i układ chłodzenia. Moderator spowalnia neutrony, a pręty regulacyjne kontrolują ich liczbę.
+
+Energia cieplna powstająca w rdzeniu jest przekazywana chłodziwu, a następnie wykorzystywana do wytwarzania pary i napędzania turbiny połączonej z generatorem. Ważne zagadnienia energetyki jądrowej obejmują bezpieczeństwo, gospodarkę paliwem, odpady promieniotwórcze, ochronę radiologiczną i analizę cyklu życia elektrowni. Należy odróżnić reaktor energetyczny od broni jądrowej; ich cele i konstrukcja są zasadniczo różne.
+
+
+\chapter{Fizyka teoretyczna}
+\section{1. Funkcja Lagrange’a i równania Lagrange’a na przykładzie oscylatora harmonicznego}
+Mechanika Lagrange’a opisuje ruch przez współrzędne uogólnione \(q_i\), które jednoznacznie określają konfigurację układu i uwzględniają więzy. Dla układu zachowawczego lagranżjan definiuje się jako \(L=T-V\), czyli różnicę energii kinetycznej i potencjalnej. Równania Lagrange’a drugiego rodzaju mają postać
+\[
+\frac{d}{dt}\frac{\partial L}{\partial\dot q_i}-\frac{\partial L}{\partial q_i}=0.
+\]
+Współrzędne uogólnione nie muszą być kartezjańskie; mogą to być kąty lub inne parametry opisujące konfigurację.
+
+Dla oscylatora harmonicznego o masie \(m\), stałej sprężystości \(k\) i współrzędnej \(x\), energia kinetyczna wynosi \(T=m\dot x^2/2\), a potencjalna \(V=kx^2/2\). Lagranżjan jest równy \(L=m\dot x^2/2-kx^2/2\). Podstawienie do równania Lagrange’a daje \(m\ddot x+kx=0\). Rozwiązaniem jest \(x(t)=A\cos(\omega_0t)+B\sin(\omega_0t)\), gdzie \(\omega_0=\sqrt{k/m}\), a stałe wyznacza się z warunków początkowych.
+
+Formalizm Lagrange’a jest szczególnie użyteczny dla układów z więzami i symetriami. Jeżeli lagranżjan nie zależy jawnie od współrzędnej \(q_i\), odpowiadający jej pęd uogólniony jest zachowany. To twierdzenie Noether wiąże symetrie ciągłe z prawami zachowania.
+
+\section{2. Stopnie swobody, uogólnione położenia i prędkości: punkt na powierzchni kuli}
+Stopnie swobody to liczba niezależnych parametrów potrzebnych do określenia konfiguracji układu po uwzględnieniu więzów. Swobodny punkt materialny w przestrzeni trójwymiarowej ma trzy stopnie swobody. Jeśli porusza się po powierzchni kuli o promieniu \(R\), więz \(x^2+y^2+z^2=R^2\) zmniejsza ich liczbę do dwóch. Naturalnymi współrzędnymi uogólnionymi są kąty sferyczne \(\theta\) i \(\phi\).
+
+Położenie można zapisać jako \(\vec r=R(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta)\). Prędkość ma kwadrat \(v^2=R^2(\dot\theta^2+\sin^2\theta\,\dot\phi^2)\), więc energia kinetyczna wynosi
+\[
+T=\frac12mR^2(\dot\theta^2+\sin^2\theta\,\dot\phi^2).
+\]
+Dla ruchu swobodnego po sferze \(V=0\), a lagranżjan \(L=T\). Ponieważ \(\phi\) nie występuje jawnie w \(L\), pęd sprzężony \(p_\phi=\partial L/\partial\dot\phi=mR^2\sin^2\theta\,\dot\phi\) jest zachowany. Jest to składowa momentu pędu względem osi \(z\).
+
+Równanie dla \(\theta\) wynika z równania Lagrange’a i opisuje geodezyjny ruch po sferze, czyli ruch po okręgach wielkich. Przykład pokazuje, że dobór współrzędnych zgodnych z więzami upraszcza rachunki i ujawnia wielkości zachowane.
+
+\section{3. Funkcja Hamiltona i równania Hamiltona na przykładzie oscylatora harmonicznego}
+Formalizm Hamiltona opisuje układ przez współrzędne uogólnione \(q_i\) i sprzężone pędy \(p_i\). Pęd kanoniczny definiuje się jako \(p_i=\partial L/\partial\dot q_i\). Hamiltonian jest transformacją Legendre’a lagranżjanu: \(H=\sum_i p_i\dot q_i-L\), po wyrażeniu prędkości przez pędy. Równania Hamiltona mają postać
+\[
+\dot q_i=\frac{\partial H}{\partial p_i},\qquad
+\dot p_i=-\frac{\partial H}{\partial q_i}.
+\]
+Są to równania pierwszego rzędu i określają ewolucję punktu w przestrzeni fazowej.
+
+Dla oscylatora harmonicznego \(L=m\dot x^2/2-kx^2/2\), więc \(p=m\dot x\). Hamiltonian wynosi \(H=p^2/(2m)+kx^2/2\), czyli jest całkowitą energią mechaniczną. Równania Hamiltona dają \(\dot x=p/m\) oraz \(\dot p=-kx\). Po zróżniczkowaniu pierwszego równania i użyciu drugiego otrzymuje się \(m\ddot x+kx=0\). Rozwiązania są harmoniczne z częstością \(\omega_0=\sqrt{k/m}\).
+
+W układzie zachowawczym Hamiltonian często jest stały w czasie i odpowiada energii całkowitej. Formalizm Hamiltona stanowi podstawę mechaniki statystycznej i kwantowej, a przestrzeń fazowa umożliwia analizę trajektorii, stabilności oraz symetrii układów.
+
+\section{4. Położenia i pędy uogólnione na przykładzie wahadła matematycznego – równania Hamiltona; małe drgania}
+Wahadło matematyczne składa się z punktowej masy \(m\) zawieszonej na nieważkiej, nierozciągliwej nici o długości \(l\). Konfigurację opisuje jeden kąt \(\theta\) względem pionu. Energia kinetyczna wynosi \(T=ml^2\dot\theta^2/2\), a potencjalną można przyjąć jako \(V=mgl(1-\cos\theta)\). Pęd uogólniony jest równy \(p_\theta=\partial L/\partial\dot\theta=ml^2\dot\theta\).
+
+Hamiltonian ma postać
+\[
+H=\frac{p_\theta^2}{2ml^2}+mgl(1-\cos\theta).
+\]
+Równania Hamiltona dają \(\dot\theta=p_\theta/(ml^2)\) oraz \(\dot p_\theta=-mgl\sin\theta\). Po połączeniu otrzymuje się równanie ruchu \(\ddot\theta+(g/l)\sin\theta=0\). Jest to równanie nieliniowe, ponieważ występuje funkcja sinus.
+
+Dla małych wychyleń można zastosować przybliżenie \(\sin\theta\approx\theta\). Równanie staje się liniowe: \(\ddot\theta+\omega_0^2\theta=0\), gdzie \(\omega_0=\sqrt{g/l}\). Okres małych drgań \(T=2\pi\sqrt{l/g}\) nie zależy od masy ani, w tym przybliżeniu, amplitudy. Hamiltonian jest sumą energii kinetycznej i potencjalnej i pozostaje stały przy braku tłumienia.
+
+\section{5. Ładunek próbny i siła Lorentza – ruch ładunku w stałym polu elektrycznym i magnetycznym}
+Ładunek próbny to idealizowany, dostatecznie mały ładunek dodatni, którego używa się do określania pola bez istotnego zaburzania jego źródeł. Siła działająca na ładunek \(q\) poruszający się z prędkością \(\vec v\) w polach elektrycznym i magnetycznym jest siłą Lorentza:
+\[
+\vec F=q(\vec E+\vec v\times\vec B).
+\]
+Pole elektryczne może zmieniać wartość energii kinetycznej cząstki, natomiast siła magnetyczna jest prostopadła do prędkości i nie wykonuje pracy.
+
+W jednorodnym stałym polu elektrycznym ruch ma stałe przyspieszenie \(\vec a=q\vec E/m\). Dla prędkości początkowej rozkłada się ruch na składową równoległą i prostopadłą do pola, analogicznie do rzutu. W jednorodnym polu magnetycznym, gdy \(\vec v\perp\vec B\), cząstka porusza się po okręgu o promieniu \(r=mv/(|q|B)\) i częstości cyklotronowej \(\omega_c=|q|B/m\). Gdy prędkość ma także składową równoległą do pola, tor jest helisą.
+
+W skrzyżowanych polach elektrycznym i magnetycznym możliwy jest ruch prostoliniowy bez odchylenia, gdy siły się równoważą, co daje \(v=E/B\) dla prostopadłych pól. Zasada ta jest wykorzystywana w selektorach prędkości. Ruch ładunków w polach stanowi podstawę działania spektrometrów mas i akceleratorów.
+
+\section{6. Prawo Gaussa dla pola elektrycznego i magnetycznego. Prawo Coulomba jako konsekwencja prawa Gaussa}
+Prawo Gaussa dla pola elektrycznego w postaci całkowej brzmi \(\oint_S\vec E\cdot d\vec S=Q_{\rm wew}/\varepsilon_0\), a w postaci różniczkowej \(\nabla\cdot\vec E=\rho/\varepsilon_0\). Opisuje ono związek źródeł pola elektrycznego z jego dywergencją. Dla pola magnetycznego strumień przez dowolną powierzchnię zamkniętą jest równy zeru: \(\oint_S\vec B\cdot d\vec S=0\), a lokalnie \(\nabla\cdot\vec B=0\). Oznacza to brak zaobserwowanych izolowanych monopoli magnetycznych w klasycznym elektromagnetyzmie.
+
+Prawo Coulomba można wyprowadzić z prawa Gaussa, korzystając z symetrii sferycznej pola pojedynczego ładunku punktowego. Na sferze o promieniu \(r\) pole ma stałą wartość i jest radialne, więc \(E4\pi r^2=q/\varepsilon_0\). Stąd \(E=q/(4\pi\varepsilon_0r^2)\), a siła na drugi ładunek \(q_2\) wynosi \(F=q_1q_2/(4\pi\varepsilon_0r^2)\), z kierunkiem zależnym od znaków ładunków.
+
+Postać różniczkowa jest wygodna do opisu lokalnego, a całkowa do układów o symetrii. Prawo Gaussa jest jednym z równań Maxwella i wraz z prawem Faradaya, prawem Ampère’a-Maxwella oraz równaniem siły Lorentza stanowi podstawę klasycznej teorii elektromagnetyzmu.
+
+\section{7. Prawo Faradaya w postaci całkowej i różniczkowej; wzbudzanie SEM}
+Prawo indukcji Faradaya mówi, że zmienny w czasie strumień pola magnetycznego wywołuje siłę elektromotoryczną w obwodzie. W postaci całkowej:
+\[
+\oint_C\vec E\cdot d\vec l=-\frac{d}{dt}\int_S\vec B\cdot d\vec S.
+\]
+W postaci różniczkowej jest to \(\nabla\times\vec E=-\partial\vec B/\partial t\). Równanie wskazuje, że zmienne pole magnetyczne wytwarza wirowe pole elektryczne, którego linie nie muszą zaczynać się ani kończyć na ładunkach.
+
+Siła elektromotoryczna jest pracą sił pola przypadającą na jednostkę ładunku wzdłuż obwodu. Dla cewki o \(N\) zwojach \(\mathcal E=-N\,d\Phi_B/dt\). Minus jest regułą Lenza: prąd indukowany przeciwdziała zmianie strumienia. SEM może powstać przez zmianę wartości pola, zmianę powierzchni obwodu lub zmianę kąta między polem a powierzchnią.
+
+W generatorze obracająca się cewka zmienia strumień magnetyczny i wytwarza napięcie przemienne. W transformatorze zmienny prąd pierwotny wytwarza zmienny strumień, który indukuje napięcie w uzwojeniu wtórnym. Warto podkreślić, że indukcja jest własnością pola elektromagnetycznego, a nie wyłącznie skutkiem ruchu przewodnika.
+
+\section{8. Prawo Ampère’a-Maxwella; ładowanie kondensatora płaskiego prądem stałym}
+Prawo Ampère’a-Maxwella uogólnia prawo Ampère’a, uwzględniając zmienne pole elektryczne. W postaci całkowej:
+\[
+\oint_C\vec B\cdot d\vec l=\mu_0 I_{\rm przew}+\mu_0\varepsilon_0\frac{d\Phi_E}{dt},
+\]
+a w postaci różniczkowej \(\nabla\times\vec B=\mu_0\vec J+\mu_0\varepsilon_0\partial\vec E/\partial t\). Drugi składnik nazywa się prądem przesunięcia. Nie jest on przepływem ładunków przez dielektryk, ale jego uwzględnienie zapewnia spójność równań pola.
+
+Podczas ładowania kondensatora płaskiego prąd przewodzenia płynie w przewodach i gromadzi ładunek na okładkach. Między okładkami rośnie pole elektryczne, a więc zmienia się strumień elektryczny. Dla idealnego kondensatora \(I=dQ/dt\), a strumień \(\Phi_E=EA\) zmienia się w czasie. Prąd przesunięcia między okładkami ma taką wartość, aby pole magnetyczne było zgodne z polem w przewodach i nie zależało od arbitralnego wyboru powierzchni rozpiętej na konturze.
+
+Prawo Ampère’a-Maxwella jest kluczowe dla przewidywania fal elektromagnetycznych. Zmienne pole elektryczne wytwarza pole magnetyczne, a zmienne pole magnetyczne – wirowe pole elektryczne. W próżni sprzężenie tych pól prowadzi do propagacji fal z prędkością \(c=1/\sqrt{\mu_0\varepsilon_0}\).
+
+\section{9. Zasada zachowania ładunku jako konsekwencja równań Maxwella}
+Zachowanie ładunku elektrycznego oznacza, że ładunek nie powstaje ani nie ginie w procesach klasycznego elektromagnetyzmu; może jedynie przepływać między obszarami. Lokalny bilans ładunku opisuje równanie ciągłości:
+\[
+\frac{\partial\rho}{\partial t}+\nabla\cdot\vec J=0,
+\]
+gdzie \(\rho\) jest gęstością ładunku, a \(\vec J\) gęstością prądu. Całkując je po objętości i stosując twierdzenie Gaussa, otrzymuje się, że szybkość zmiany ładunku wewnątrz obszaru jest równa minus strumieniowi prądu przez jego powierzchnię.
+
+Równanie ciągłości wynika z równań Maxwella. Bierzemy dywergencję prawa Ampère’a-Maxwella: dywergencja rotacji pola jest zawsze równa zeru, zatem \(0=\mu_0\nabla\cdot\vec J+\mu_0\varepsilon_0\partial(\nabla\cdot\vec E)/\partial t\). Korzystając z prawa Gaussa \(\nabla\cdot\vec E=\rho/\varepsilon_0\), otrzymujemy \(\nabla\cdot\vec J+\partial\rho/\partial t=0\).
+
+Wynik pokazuje, że człon prądu przesunięcia jest konieczny dla zgodności teorii. Bez niego równania Maxwella nie zapewniałyby poprawnego bilansu ładunku w sytuacjach, takich jak ładowanie kondensatora. Zasada zachowania ładunku jest podstawowym prawem lokalnym, stosowanym także w elektrodynamice kwantowej i fizyce cząstek.
+
+\section{10. Płaskie fale elektromagnetyczne jako rozwiązania równań Maxwella w próżni}
+W próżni, poza źródłami, równania Maxwella przyjmują postać \(\nabla\cdot\vec E=0\), \(\nabla\cdot\vec B=0\), \(\nabla\times\vec E=-\partial\vec B/\partial t\) oraz \(\nabla\times\vec B=\mu_0\varepsilon_0\partial\vec E/\partial t\). Zastosowanie rotacji do równań rotacyjnych i tożsamości wektorowych prowadzi do równań falowych:
+\[
+\nabla^2\vec E-\frac{1}{c^2}\frac{\partial^2\vec E}{\partial t^2}=0,\qquad
+\nabla^2\vec B-\frac{1}{c^2}\frac{\partial^2\vec B}{\partial t^2}=0,
+\]
+gdzie \(c=1/\sqrt{\mu_0\varepsilon_0}\).
+
+Płaska fala harmoniczna biegnąca w kierunku \(\vec k\) ma postać \(\vec E=\vec E_0\cos(\vec k\cdot\vec r-\omega t)\), analogicznie dla \(\vec B\). Pola są poprzeczne: \(\vec E\perp\vec B\perp\vec k\), a ich amplitudy spełniają \(E_0=cB_0\). Wektory pola elektrycznego i magnetycznego są zgodne w fazie dla fali płaskiej w próżni.
+
+Energia fali opisana jest gęstością \(u=\varepsilon_0E^2/2+B^2/(2\mu_0)\), a strumień energii wektorem Poyntinga \(\vec S=(1/\mu_0)\vec E\times\vec B\). Fale elektromagnetyczne przenoszą energię i pęd, nie wymagając materialnego ośrodka. Światło jest falą elektromagnetyczną, a jego polaryzacja wynika z kierunku drgań pola elektrycznego.
+
+\section{11. Eksperymenty prowadzące do teorii kwantowej i rozbieżności z fizyką klasyczną}
+Powstanie teorii kwantowej było odpowiedzią na zjawiska, których nie potrafiła wyjaśnić fizyka klasyczna. Promieniowanie ciała doskonale czarnego prowadziło w klasycznym opisie do katastrofy nadfioletowej. Planck uzyskał zgodność z widmem, zakładając wymianę energii w porcjach \(E=nhf\). Efekt fotoelektryczny pokazał, że energia elektronów zależy od częstotliwości światła, a nie tylko od jego natężenia. Einstein wyjaśnił go, przyjmując fotony o energii \(hf\), co prowadzi do \(K_{\max}=hf-W\).
+
+Efekt Comptona, czyli zmiana długości fali promieniowania rentgenowskiego po rozproszeniu na elektronach, potwierdził pęd fotonu \(p=h/\lambda\). Widma atomowe wykazują dyskretne linie, niezgodne z klasycznym obrazem elektronów o dowolnych energiach. Model Bohra wprowadził skwantowane stany atomu wodoru, a mechanika kwantowa nadała temu ogólniejszą podstawę. Doświadczenie Francka-Hertza wykazało dyskretne energie wzbudzeń atomowych.
+
+Dualizm korpuskularno-falowy ujawnił się również w dyfrakcji elektronów. Zjawiska te doprowadziły do opisu stanu przez funkcję falową, probabilistycznej interpretacji Borna i równania Schrödingera. Klasyczna fizyka pozostaje dobrym przybliżeniem dla dużych układów i odpowiednich skal, lecz w skali atomowej konieczny jest opis kwantowy.
+
+\section{12. Zasada nieoznaczoności: pęd–położenie, kąt–moment pędu, energia–czas}
+Zasada nieoznaczoności Heisenberga wynika z matematycznej struktury mechaniki kwantowej i nie jest jedynie skutkiem niedoskonałości przyrządów. Dla położenia i pędu zachodzi \(\Delta x\,\Delta p_x\geq\hbar/2\). Oznacza to, że stan kwantowy nie może mieć jednocześnie dowolnie małych rozrzutów położenia i składowej pędu. Niepewności są odchyleniami standardowymi wyników pomiarów w wielu identycznie przygotowanych układach.
+
+Ogólna relacja Robertsona ma postać \(\Delta A\,\Delta B\geq\frac12|\langle[\hat A,\hat B]\rangle|\). Jeżeli operatory komutują, dolne ograniczenie z komutatora może być zerowe; nie oznacza to automatycznie, że każdy stan ma zerowe niepewności. Dla kąta i momentu pędu istnieją subtelności związane z okresowym charakterem kąta i definicją operatora. W standardowych ujęciach relacja wiąże rozdzielczość kąta z rozrzutem odpowiedniej składowej momentu pędu.
+
+Relacja energia–czas ma inny status, ponieważ czas w standardowej mechanice kwantowej jest parametrem, a nie operatorem obserwabli takim jak położenie. Jedna z interpretacji wiąże czas charakterystycznej zmiany stanu z rozrzutem energii: \(\Delta E\,\Delta t\) jest ograniczone wielkością rzędu \(\hbar\). Zasada ma znaczenie, gdy wielkości opisane przez niekomutujące operatory są mierzone lub gdy rozpatruje się stany o ograniczonej szerokości energetycznej.
+
+\section{13. Efekt tunelowy: cząstka i prostokątna bariera potencjału}
+Efekt tunelowy polega na niezerowym prawdopodobieństwie przejścia cząstki przez obszar, w którym klasycznie jej energia jest mniejsza od energii potencjalnej. Rozpatrzmy barierę \(V(x)=V_0\) dla \(0<x<a\) i zero poza nią, przy \(E<V_0\). Stacjonarne równanie Schrödingera ma postać
+\[
+-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}+V(x)\psi=E\psi.
+\]
+Poza barierą rozwiązania są oscylacyjne, a wewnątrz bariery wykładnicze, z parametrem \(\kappa=\sqrt{2m(V_0-E)}/\hbar\).
+
+Funkcja falowa i jej pochodna są ciągłe na granicach skończonej bariery. Dopasowanie rozwiązań prowadzi do współczynnika transmisji. Dla bariery dostatecznie szerokiej i wysokiej prawdopodobieństwo tunelowania maleje w przybliżeniu jak \(e^{-2\kappa a}\). Nie należy interpretować tunelowania jako klasycznego „przeskoczenia” bariery; jest ono konsekwencją falowego charakteru stanu kwantowego.
+
+Efekt tunelowy wyjaśnia m.in. rozpad alfa, działanie mikroskopu tunelowego i część procesów w półprzewodnikach. W rozpadzie alfa cząstka uwięziona w jądrze ma energię mniejszą od bariery kulombowskiej, ale może przeniknąć przez nią. W mikroskopie tunelowym prąd zależy bardzo silnie od odległości ostrza od powierzchni, co umożliwia obrazowanie atomowe.
+
+\section{14. Równanie Schrödingera dla cząstki kwantowej: swobodna cząstka}
+Równanie Schrödingera opisuje ewolucję funkcji falowej układu kwantowego. Zależne od czasu równanie dla cząstki o masie \(m\) w potencjale \(V\) ma postać
+\[
+i\hbar\frac{\partial\psi}{\partial t}=
+\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vec r,t)\right]\psi.
+\]
+Dla cząstki swobodnej \(V=0\). Rozwiązaniami o określonym pędzie są fale płaskie \(\psi=Ae^{i(\vec k\cdot\vec r-\omega t)}\), gdzie \(\vec p=\hbar\vec k\), a \(E=\hbar\omega=\hbar^2k^2/(2m)\).
+
+Fala płaska rozciąga się na całą przestrzeń i nie jest normalizowalna w zwykłym sensie, dlatego fizyczne cząstki lokalizowane opisuje się pakietami falowymi, czyli superpozycjami fal o różnych wektorach falowych. Pakiet może się rozprzestrzeniać w czasie, ponieważ zależność energii od pędu jest dyspersyjna. Prędkość grupowa pakietu wynosi \(v_g=d\omega/dk\) i dla cząstki nierelatywistycznej odpowiada \(p/m\).
+
+Interpretacja Borna przypisuje \(|\psi(\vec r,t)|^2\) gęstość prawdopodobieństwa znalezienia cząstki. Normalizacja wymaga \(\int|\psi|^2d^3r=1\). Równanie Schrödingera jest liniowe, dlatego superpozycje rozwiązań również są rozwiązaniami. Dla swobodnej cząstki energia i pęd są stałymi ruchu.
+
+\section{15. Funkcje falowe układów cząstek. Bozony i fermiony}
+Stan układu wielu identycznych cząstek opisuje funkcja falowa zależna od współrzędnych wszystkich cząstek. W mechanice kwantowej identyczne cząstki są nierozróżnialne, a wymiana dwóch cząstek nie może prowadzić do nowego fizycznego stanu. Funkcja falowa bozonów jest symetryczna względem zamiany cząstek, natomiast funkcja fermionów jest antysymetryczna. W trzech wymiarach spin-statystyka wiąże bozony z całkowitym spinem, a fermiony z połówkowym.
+
+Zasada Pauliego wynika z antysymetrii funkcji falowej fermionów: dwa identyczne fermiony nie mogą zajmować tego samego stanu kwantowego. Wyjaśnia to strukturę powłok elektronowych i wiele własności materii. Bozony mogą gromadzić się w tym samym stanie, co jest podstawą m.in. kondensacji Bosego-Einsteina i emisji wymuszonej w laserach.
+
+Przykładami fermionów są elektrony, protony, neutrony i kwarki; przykłady bozonów to fotony, gluony oraz bozony \(W^\pm\) i \(Z^0\). Złożone cząstki mogą zachowywać się jak bozony lub fermiony zależnie od całkowitego spinu i warunków. Funkcja falowa układu identycznych cząstek musi mieć odpowiednią symetrię, co wpływa na dozwolone stany, rozkłady statystyczne i obserwowane własności układów wielocząstkowych.
+
+\section{16. Opis stanu układu cząstek w termodynamice; pierwsza i druga zasada}
+Stan makroskopowego układu termodynamicznego opisuje się przez wielkości takie jak temperatura, ciśnienie, objętość, liczba cząstek i energia. Stan mikroskopowy określa konfiguracja i pędy wszystkich cząstek, natomiast stan makroskopowy odpowiada ogromnej liczbie mikrostanów. Wielkości makroskopowe są średnimi lub funkcjami rozkładów mikroskopowych. Równowaga termodynamiczna oznacza brak makroskopowych przepływów i stałość parametrów stanu w czasie.
+
+Pierwsza zasada termodynamiki wyraża zachowanie energii: \(\Delta U=Q-W\), jeśli \(W\) jest pracą wykonaną przez układ. Energia wewnętrzna obejmuje mikroskopową energię kinetyczną i potencjalną składników. Druga zasada wprowadza entropię i określa kierunek procesów: dla układu izolowanego \(\Delta S\geq0\). Procesy odwracalne zachowują entropię całkowitą, a nieodwracalne ją zwiększają.
+
+W termodynamice statystycznej entropia Boltzmanna ma postać \(S=k_B\ln\Omega\), gdzie \(\Omega\) jest liczbą dostępnych mikrostanów zgodnych z makrostanem. Większa liczba mikrostanów oznacza większą entropię. Związek ten pozwala interpretować drugą zasadę jako statystyczną tendencję układów do przechodzenia w makrostany realizowane przez większą liczbę mikrostanów.
+
+\section{17. Rozkład kanoniczny układu cząstek klasycznych i związek z wielkościami makroskopowymi}
+Rozkład kanoniczny opisuje układ w kontakcie termicznym z dużym zbiornikiem o ustalonej temperaturze \(T\). Układ może wymieniać energię z otoczeniem, ale jego liczba cząstek i objętość są stałe. Prawdopodobieństwo mikrostanów o energii \(E_i\) jest proporcjonalne do czynnika Boltzmanna:
+\[
+P_i=\frac{e^{-\beta E_i}}{Z},\qquad \beta=\frac{1}{k_BT},
+\]
+gdzie \(Z=\sum_i e^{-\beta E_i}\) jest funkcją podziału kanonicznego. W klasycznym opisie sumę zastępuje się odpowiednią całką po przestrzeni fazowej, z uwzględnieniem normalizacji.
+
+Funkcja podziału zawiera informację o równowagowych własnościach układu. Średnia energia wynosi \(\langle E\rangle=-\partial\ln Z/\partial\beta\), a energia swobodna Helmholtza \(F=-k_BT\ln Z\). Entropię można wyznaczyć z \(S=-\partial F/\partial T\), a ciśnienie z \(p=-(\partial F/\partial V)_T\). Pochodne funkcji podziału pozwalają również obliczać fluktuacje energii i pojemność cieplną.
+
+Dla klasycznego gazu doskonałego rozkład kanoniczny prowadzi do rozkładu Maxwella-Boltzmanna prędkości i równania stanu \(pV=Nk_BT\). Rozkład kanoniczny jest podstawowym narzędziem mechaniki statystycznej, łączącym mikroskopowe widmo energii z obserwowalnymi wielkościami termodynamicznymi.
+
+
+\chapter{Ekonofizyka}
+\section{1. Zasady konstrukcji i analiza portfela papierów wartościowych}
+Portfel inwestycyjny jest zbiorem aktywów, których udziały określa wektor wag \(\mathbf w=(w_1,\ldots,w_n)\). Przy pełnym zainwestowaniu kapitału zwykle przyjmuje się \(\sum_iw_i=1\); dopuszczenie krótkiej sprzedaży może pozwalać na wagi ujemne. Zwrot portfela w danym okresie jest ważoną sumą zwrotów składników: \(R_p=\sum_iw_iR_i\). Średni oczekiwany zwrot wynosi \(\mu_p=\mathbf w^\top\boldsymbol\mu\).
+
+Ryzyko w klasycznym modelu Markowitza mierzy się wariancją zwrotu: \(\sigma_p^2=\mathbf w^\top\Sigma\mathbf w\), gdzie \(\Sigma\) jest macierzą kowariancji. Dywersyfikacja może obniżyć ryzyko, jeżeli zwroty aktywów nie są doskonale dodatnio skorelowane. Konstrukcja portfela polega na określeniu zbioru dopuszczalnych wag, estymacji średnich zwrotów i kowariancji oraz optymalizacji kryterium inwestora.
+
+Analiza wymaga ostrożności wobec błędów estymacji, zmienności parametrów w czasie, kosztów transakcyjnych i ograniczonej płynności. Historyczna średnia i wariancja nie gwarantują przyszłych wyników. W praktyce warto oceniać portfel przez analizę scenariuszową, testy odporności i porównanie z odpowiednim benchmarkiem. W ujęciu egzaminacyjnym kluczowe jest wyjaśnienie, jak korelacje między aktywami wpływają na ryzyko całego portfela.
+
+\section{2. Portfel najmniejszego ryzyka a portfel optymalny}
+Portfel najmniejszego ryzyka to portfel o minimalnej wariancji spośród portfeli spełniających zadane ograniczenia. W klasycznym modelu Markowitza globalny portfel minimalnej wariancji rozwiązuje problem minimalizacji \(\mathbf w^\top\Sigma\mathbf w\) przy warunku \(\mathbf 1^\top\mathbf w=1\). Nie musi on zapewniać najwyższego oczekiwanego zwrotu, lecz ma najmniejsze ryzyko mierzone wariancją w danym zbiorze możliwości.
+
+Portfel optymalny zależy od preferencji inwestora i przyjętego kryterium. Dla inwestora maksymalizującego użyteczność średnio-wariancyjną można rozważać funkcję \(U=\mu_p-\frac{\lambda}{2}\sigma_p^2\), gdzie \(\lambda\) opisuje awersję do ryzyka. Inny inwestor może wybrać portfel o większym ryzyku i większym oczekiwanym zwrocie. Zbiór portfeli efektywnych tworzy granicę efektywną: dla danego ryzyka nie istnieje portfel o większym oczekiwanym zwrocie.
+
+Wybór optymalny nie jest więc pojęciem absolutnym. Zależy od horyzontu inwestycyjnego, tolerancji ryzyka, ograniczeń prawnych, płynności, kosztów i oczekiwań. W praktyce należy odróżnić matematyczne optimum modelu od decyzji podejmowanej przy niepewnych danych. Model Markowitza jest punktem wyjścia, ale jego wyniki bywają wrażliwe na estymację oczekiwanych zwrotów i korelacji.
+
+\section{3. Korelacje między notowaniami, zwrotami i taksonomia portfela papierów wartościowych}
+Notowania papierów wartościowych są poziomami cen, natomiast zwroty opisują względną zmianę wartości w czasie. Zwrot prosty wynosi \(R_t=(P_t-P_{t-1})/P_{t-1}\), a logarytmiczny \(r_t=\ln(P_t/P_{t-1})\). Dla małych zmian oba są zbliżone, ale zwroty logarytmiczne łatwiej sumują się w czasie. Analizowanie korelacji samych cen może prowadzić do pozornych zależności, zwłaszcza gdy szeregi są niestacjonarne; zwykle bada się korelacje zwrotów.
+
+Korelacja Pearsona \(\rho_{ij}=\mathrm{Cov}(R_i,R_j)/(\sigma_i\sigma_j)\) mieści się w przedziale od \(-1\) do \(1\). Wartość dodatnia oznacza tendencję do wspólnych zmian, ujemna – do zmian przeciwnych, a bliska zeru – brak liniowej zależności. Korelacja nie oznacza przyczynowości i może zmieniać się w czasie, szczególnie w okresach kryzysowych.
+
+Taksonomia portfela polega na grupowaniu aktywów według podobieństwa ich zachowania, branży, regionu, czynników ryzyka lub profilu korelacji. Macierz korelacji może być przekształcona w miarę odległości, np. \(d_{ij}=\sqrt{2(1-\rho_{ij})}\), a następnie użyta w metodach grupowania hierarchicznego. Takie podejście pomaga identyfikować klastry aktywów i oceniać dywersyfikację, ale zależy od okresu danych i wybranej miary podobieństwa.
+
+\section{4. Krachy finansowe jako przejścia fazowe i ich opis ilościowy. Metody przewidywania i badania}
+Krach finansowy to gwałtowny spadek cen aktywów lub szerokiego rynku, często po okresie wzrostu i narastania niestabilności. W ekonofizyce porównuje się takie zjawiska z przejściami fazowymi w układach złożonych. Wspólnymi cechami mogą być korelacje obejmujące wiele skal, wzrost fluktuacji, sprzężenia zwrotne i kolektywne zachowanie uczestników. Analogia do przejścia fazowego jest modelem interpretacyjnym, a nie stwierdzeniem, że rynek jest układem równowagowym w sensie termodynamicznym.
+
+Do ilościowego badania krachów wykorzystuje się rozkłady zwrotów, zmienność, korelacje, miary ogonowego ryzyka, analizę sieciową i modele agentowe. W niektórych podejściach analizuje się przyspieszający wzrost cen i oscylacje logarytmicznie okresowe przed krytycznym momentem. Modele takie mogą dostarczać wskaźników ostrzegawczych, ale ich parametry są trudne do estymacji, a sygnały mogą generować fałszywe alarmy.
+
+Przewidywanie krachów jest szczególnie trudne, ponieważ rynek adaptuje się, a zdarzenia skrajne są rzadkie i zależne od wielu czynników. Metody powinny być oceniane przez testy poza próbą, stabilność parametrów i porównanie z prostymi punktami odniesienia. Należy rozróżniać prognozowanie prawdopodobieństwa podwyższonego ryzyka od wskazania dokładnej daty i skali przyszłego krachu.
+
+\section{5. Statystyczne własności rozkładów zwrotów na rynkach finansowych}
+Rozkłady zwrotów finansowych często odbiegają od rozkładu normalnego. W wielu danych obserwuje się leptokurtyczność, czyli grubsze ogony niż w rozkładzie Gaussa, oraz skupianie zmienności: okresy dużych zmian występują w skupiskach, podobnie jak okresy małych zmian. Rozkłady bywają w przybliżeniu symetryczne dla krótkookresowych zwrotów, choć asymetria może występować w zależności od rynku i horyzontu.
+
+Podstawowe statystyki obejmują średnią, wariancję, skośność i kurtozę. Kurtoza nadmiarowa jest równa kurtozie pomniejszonej o 3, przy konwencji, w której rozkład normalny ma kurtozę 3. Grube ogony oznaczają, że zdarzenia skrajne występują częściej, niż przewidywałby model Gaussa o tej samej wariancji. Dlatego sama wariancja nie opisuje w pełni ryzyka.
+
+Zmienność może być warunkowo heteroskedastyczna: wariancja zwrotu zależy od wcześniejszych informacji. Autokorelacje samych zwrotów bywają małe, ale autokorelacje kwadratów lub wartości bezwzględnych zwrotów są często dodatnie. Do analizy ryzyka stosuje się m.in. kwantyle, Value at Risk, Expected Shortfall i modele zmienności warunkowej. Wnioski zależą od częstotliwości próbkowania, okresu i sposobu przygotowania danych.
+
+\section{6. Modelowanie rozkładów zwrotów: AR, MA i ARMA. Związek z rozkładami Gaussa}
+Modele AR, MA i ARMA opisują zależności czasowe w stacjonarnych szeregach. Model autoregresyjny AR(\(p\)) zapisuje się jako \(x_t=c+\sum_{i=1}^p\phi_ix_{t-i}+\epsilon_t\), gdzie \(\epsilon_t\) jest białym szumem. Model średniej ruchomej MA(\(q\)) ma postać \(x_t=\mu+\epsilon_t+\sum_{j=1}^q\theta_j\epsilon_{t-j}\). Model ARMA(\(p,q\)) łączy oba mechanizmy.
+
+W modelu Gaussowskim zakłada się, że składniki losowe \(\epsilon_t\) mają rozkład normalny i są niezależne w czasie, zwykle o średniej zero i stałej wariancji. Wtedy cały wektor obserwacji ma wielowymiarowy rozkład normalny, a parametry można estymować metodami największej wiarygodności lub innymi procedurami. Normalność innowacji jest jednak założeniem, które należy sprawdzić, a nie uniwersalną cechą danych finansowych.
+
+ARMA może modelować liniową autokorelację średniej, ale nie opisuje samo z siebie skupiania zmienności i grubych ogonów. W finansach często modeluje się średnią za pomocą ARMA, a wariancję warunkową za pomocą ARCH/GARCH. Dobór rzędów wymaga analizy stacjonarności, funkcji autokorelacji i autokorelacji cząstkowej oraz diagnostyki reszt.
+
+\section{7. Procesy stochastyczne ARCH i GARCH jako modele finansowych szeregów czasowych}
+Modele ARCH i GARCH opisują zmienną w czasie wariancję warunkową, czyli skupianie zmienności obserwowane w szeregach finansowych. W modelu ARCH(\(q\)) zwrot można zapisać jako \(r_t=\mu+\epsilon_t\), gdzie \(\epsilon_t=\sigma_t z_t\), a \(z_t\) jest niezależnym szumem o średniej zero i wariancji jeden. Wariancja warunkowa spełnia \(\sigma_t^2=\alpha_0+\sum_{i=1}^q\alpha_i\epsilon_{t-i}^2\), przy dodatnich parametrach zapewniających nieujemność.
+
+Model GARCH(\(p,q\)) dodaje opóźnione wariancje:
+\[
+\sigma_t^2=\alpha_0+\sum_{i=1}^q\alpha_i\epsilon_{t-i}^2+
+\sum_{j=1}^p\beta_j\sigma_{t-j}^2.
+\]
+W popularnym GARCH(1,1) wariancja zależy od ostatniego kwadratu szoku i poprzedniej wariancji. Przy warunkach stacjonarności \(\alpha_1+\beta_1<1\) wariancja bezwarunkowa wynosi \(\alpha_0/(1-\alpha_1-\beta_1)\).
+
+Parametry estymuje się zwykle metodą największej wiarygodności, przy założonym rozkładzie innowacji, np. normalnym lub t-Studenta. Model umożliwia prognozowanie zmienności i ocenę ryzyka, lecz standardowy GARCH nie zawsze oddaje asymetrię reakcji na dobre i złe wiadomości. Rozszerzenia, takie jak EGARCH i GJR-GARCH, uwzględniają efekty asymetryczne.
+
+\section{8. Skalowanie w systemach finansowych: fraktalna i multifraktalna struktura szeregów}
+Skalowanie oznacza, że własności statystyczne szeregu zmieniają się z horyzontem czasowym według praw potęgowych. Dla procesu samopodobnego przyrosty mogą spełniać zależność \(\langle|X(t+\tau)-X(t)|^q\rangle\propto\tau^{\zeta(q)}\). W prostym przypadku fraktalnym wykładnik skalowania ma liniową zależność od rzędu momentu \(q\), np. \(\zeta(q)=qH\), gdzie \(H\) jest wykładnikiem Hursta. Wartość \(H=1/2\) odpowiada skalowaniu charakterystycznemu dla niezależnych przyrostów o skończonej wariancji.
+
+Multifraktalność występuje, gdy wykładnik \(\zeta(q)\) jest nieliniową funkcją \(q\). Oznacza to, że różne momenty szeregu wykazują różne prawa skalowania, co może odzwierciedlać złożoną strukturę fluktuacji i zmienności. W danych finansowych analizuje się multifraktalność m.in. przez funkcje struktury, analizę DFA i metody MF-DFA.
+
+Wyniki skalowania zależą od zakresu skal, jakości danych, niestacjonarności i mikrostruktury rynku. Pozorna multifraktalność może wynikać z grubych ogonów rozkładu lub krótkookresowych efektów transakcyjnych. Dlatego analizę należy uzupełniać testami na danych zastępczych i kontrolą artefaktów. Pojęcia fraktalne pomagają opisywać złożoność szeregów, ale same nie stanowią niezawodnej metody prognozowania cen.
+
+
+\chapter*{Wskazówki do odpowiedzi ustnej}
+\addcontentsline{toc}{chapter}{Wskazówki do odpowiedzi ustnej}
+Dobrą odpowiedź na egzaminie warto budować według stałego porządku:
+\begin{enumerate}
+\item podać definicję i wyjaśnić znaczenie podstawowych pojęć;
+\item sformułować prawo lub zasadę własnymi słowami;
+\item zapisać najważniejsze równanie i objaśnić symbole oraz jednostki;
+\item wskazać założenia, przybliżenia i zakres stosowalności;
+\item wyjaśnić sens fizyczny zależności, najlepiej na prostym przykładzie;
+\item wspomnieć o doświadczeniu lub zastosowaniu potwierdzającym omawiane zjawisko.
+\end{enumerate}
+\end{document}
