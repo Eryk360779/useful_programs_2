@@ -1,0 +1,297 @@
+
+\documentclass[10pt,a4paper]{article}
+
+% ==========================================
+% PACKAGES
+% ==========================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{paracol}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\geometry{
+    top=1.2cm,
+    bottom=1.2cm,
+    left=1.2cm,
+    right=1.2cm
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.8cm}
+
+% ==========================================
+% COLORS
+% ==========================================
+
+\definecolor{navy}{HTML}{202C39}
+\definecolor{orange}{HTML}{F28C28}
+\definecolor{lightgray}{HTML}{F3F4F6}
+\definecolor{darkgray}{HTML}{444444}
+\definecolor{white}{HTML}{FFFFFF}
+
+% ==========================================
+% SECTION FORMATTING
+% ==========================================
+
+\titleformat{\section}
+{\Large\bfseries\color{navy}}
+{}{0em}{}[\color{orange}\titlerule]
+
+\titlespacing{\section}{0pt}{12pt}{7pt}
+
+\setlist[itemize]{
+    leftmargin=1.2em,
+    itemsep=3pt,
+    topsep=3pt
+}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=orange
+}
+
+% ==========================================
+% CUSTOM COMMANDS
+% ==========================================
+
+\newcommand{\skill}[2]{
+    \textbf{#1}\\[-2pt]
+    \color{orange}\rule{#2\linewidth}{4pt}
+    \color{white}
+    \vspace{5pt}
+}
+
+\newcommand{\sideheading}[1]{
+    \vspace{12pt}
+    {\large\bfseries\color{orange} #1}\\[5pt]
+}
+
+\newcommand{\job}[4]{
+    \textbf{\color{navy}#1}
+    \hfill
+    {\small\color{orange}#2}\\
+    \textit{#3}\\
+    #4
+    \vspace{8pt}
+}
+
+% ==========================================
+% DOCUMENT
+% ==========================================
+
+\begin{document}
+
+% ==========================================
+% HEADER
+% ==========================================
+
+\begin{center}
+
+{\fontsize{32}{36}\selectfont
+\bfseries\color{navy} NARUTO UZUMAKI}
+
+\vspace{4pt}
+
+{\large\color{orange}
+ASPIRING RAMEN CHEF
+\quad | \quad
+CUSTOMER SERVICE SPECIALIST}
+
+\vspace{6pt}
+
+{\small
+Hidden Leaf Village, Fire Country
+\quad $\bullet$ \quad
+naruto.uzumaki@example.com
+}
+
+\end{center}
+
+\vspace{8pt}
+
+% ==========================================
+% TWO-COLUMN LAYOUT
+% ==========================================
+
+\columnratio{0.30,0.70}
+
+\begin{paracol}{2}
+
+
+% ==========================================
+% TWO-COLUMN LAYOUT
+% ==========================================
+
+\columnratio{0.30,0.70}
+
+
+
+% ==========================================
+% LEFT SIDEBAR
+% ==========================================
+
+\footnotesize
+
+\colorbox{navy}{
+\begin{minipage}[t]{0.88\linewidth}
+
+\color{white}
+
+\vspace{5pt}
+
+\begin{center}
+{\Large\bfseries NARUTO UZUMAKI}
+
+\vspace{5pt}
+
+\includegraphics[width=2.5cm,height=2.5cm,keepaspectratio]{R.jpeg}
+\end{center}
+
+\sideheading{ABOUT ME}
+
+Energetic, ambitious and
+extremely passionate about
+ramen.
+
+I believe that every person
+deserves a delicious bowl of
+noodles!
+
+\sideheading{CONTACT}
+
+Hidden Leaf Village
+
+Fire Country
+
+naruto.uzumaki@example.com
+
+\sideheading{SKILLS}
+
+Customer Service
+
+\skill{Communication}{0.9}
+
+Teamwork
+
+\skill{Ramen Knowledge}{1.0}
+
+Noodle Tasting
+
+\skill{Cooking}{0.4}
+
+\sideheading{LANGUAGES}
+
+Japanese -- Native
+
+English -- Intermediate
+
+Ramen -- Fluent
+
+\sideheading{INTERESTS}
+
+\begin{itemize}
+    \item Ramen
+    \item Cooking
+    \item Becoming Hokage
+\end{itemize}
+
+\vspace{5pt}
+
+\end{minipage}
+}
+
+% ==========================================
+% RIGHT COLUMN
+% ==========================================
+
+\switchcolumn
+
+\normalsize
+
+% PUT YOUR RIGHT COLUMN CONTENT HERE
+
+\section*{PROFESSIONAL PROFILE}
+
+Highly motivated and enthusiastic ramen
+enthusiast seeking an opportunity to join
+the Ichiraku Ramen team.
+
+Possessing extensive practical experience
+as a loyal customer, I have developed
+excellent knowledge of ramen quality,
+broth appreciation and customer satisfaction.
+
+\section*{PROFESSIONAL EXPERIENCE}
+
+\job
+{Ichiraku Ramen}
+{Present}
+{Unofficial Ramen Quality Specialist}
+{
+\begin{itemize}
+    \item Extensive experience tasting ramen.
+    \item Knowledge of broth quality.
+    \item Excellent customer relationships.
+    \item Exceptional loyalty to the restaurant.
+\end{itemize}
+}
+
+\job
+{Hidden Leaf Village}
+{Previous}
+{Community Volunteer}
+{
+\begin{itemize}
+    \item Assisted with community events.
+    \item Demonstrated excellent teamwork.
+    \item Helped create a positive atmosphere.
+\end{itemize}
+}
+
+\section*{EDUCATION}
+
+\textbf{Konohagakure Ninja Academy}
+
+\textit{Basic Education and Practical Training}
+
+\begin{itemize}
+    \item Teamwork and communication.
+    \item Discipline and responsibility.
+    \item Problem-solving.
+\end{itemize}
+
+\section*{SPECIAL ABILITIES}
+
+\begin{itemize}
+    \item Shadow Clone Technique.
+    \item Exceptional stamina.
+    \item Never Give Up Attitude.
+    \item Unlimited ramen appetite.
+\end{itemize}
+
+\section*{REFERENCES}
+
+\textbf{Teuchi}
+
+Owner of Ichiraku Ramen.
+
+Available upon request.
+
+\end{paracol}
+
+
+
+\end{document}
+
