@@ -1,0 +1,1266 @@
+
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.3cm}
+\usepackage{amsmath,amssymb,siunitx}
+\sisetup{locale=DE, per-mode=symbol}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\allowdisplaybreaks
+
+% Custom commands
+\newcommand{\jw}{\mathrm{j}\omega}
+\newcommand{\Z}{\underline{Z}}
+\newcommand{\U}{\underline{U}}
+\newcommand{\I}{\underline{I}}
+\newcommand{\Htr}{\underline{H}}
+
+\title{\textbf{Praca domowa}\\Obwody prądu sinusoidalnego i filtry}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ==================================================
+\section{Wykresy wskazowe rezystora i kondensatora}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Narysować wykres wskazowy dla rezystora $R$ i kondensatora $C$ połączonych:
+\begin{enumerate}[label=\alph*)]
+    \item szeregowo,
+    \item równolegle.
+\end{enumerate}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Dla przebiegów sinusoidalnych przyjmujemy zapis zespolony.
+Impedancje elementów wynoszą:
+
+\[
+\Z_R=R,\qquad
+\Z_C=\frac{1}{\jw C}
+=-\mathrm{j}\frac{1}{\omega C}.
+\]
+
+W rezystorze napięcie i prąd są w fazie.
+W kondensatorze prąd wyprzedza napięcie o $90^\circ$.
+
+Wykres wskazowy można budować, przyjmując za oś odniesienia:
+\begin{itemize}
+    \item prąd -- dla połączenia szeregowego,
+    \item napięcie -- dla połączenia równoległego.
+\end{itemize}
+
+\subsection*{Rozwiązanie}
+
+\textbf{a) Połączenie szeregowe RC}
+
+W połączeniu szeregowym przez oba elementy płynie ten sam prąd.
+Przyjmujemy go jako wskaz odniesienia.
+
+Napięcie rezystora jest zgodne w fazie z prądem, natomiast napięcie kondensatora
+jest opóźnione względem prądu o $90^\circ$:
+
+\[
+\U_R=RI,
+\qquad
+\U_C=-\mathrm{j}\frac{I}{\omega C},
+\qquad
+\U=\U_R+\U_C.
+\]
+
+Moduł napięcia całkowitego:
+
+\[
+|\U|=I\sqrt{R^2+\left(\frac{1}{\omega C}\right)^2}.
+\]
+
+Kąt przesunięcia fazowego:
+
+\[
+\varphi=-\arctan\left(\frac{1}{\omega RC}\right).
+\]
+
+\begin{center}
+\begin{tikzpicture}[>=stealth,scale=1.0]
+
+\draw[->,gray] (-0.25,0)--(4.3,0) node[right] {$\Re$};
+\draw[->,gray] (0,-2.1)--(0,1.0) node[above] {$\Im$};
+
+\draw[->,thick,blue] (0,0)--(3.2,0)
+node[midway,above] {$\U_R$};
+
+\draw[->,thick,red] (3.2,0)--(3.2,-1.65)
+node[midway,right] {$\U_C$};
+
+\draw[->,very thick] (0,0)--(3.2,-1.65)
+node[midway,below right] {$\U$};
+
+\draw[->,thick] (0,0)--(1.35,0)
+node[below] {$\I$};
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{b) Połączenie równoległe RC}
+
+W połączeniu równoległym napięcie na obu elementach jest takie samo.
+Przyjmujemy je jako wskaz odniesienia.
+
+Prąd rezystora jest z nim zgodny w fazie, a prąd kondensatora wyprzedza
+je o $90^\circ$:
+
+\[
+\I_R=\frac{U}{R},
+\qquad
+\I_C=\mathrm{j}\omega CU,
+\qquad
+\I=\I_R+\I_C.
+\]
+
+Moduł prądu całkowitego:
+
+\[
+|\I|=U\sqrt{\frac{1}{R^2}+(\omega C)^2}.
+\]
+
+Kąt przesunięcia fazowego:
+
+\[
+\varphi_I=\arctan(\omega RC).
+\]
+
+\begin{center}
+\begin{tikzpicture}[>=stealth,scale=1.0]
+
+\draw[->,gray] (-0.25,0)--(4.3,0) node[right] {$\Re$};
+\draw[->,gray] (0,-0.35)--(0,2.8) node[above] {$\Im$};
+
+\draw[->,thick,blue] (0,0)--(3.1,0)
+node[midway,below] {$\I_R$};
+
+\draw[->,thick,red] (3.1,0)--(3.1,1.9)
+node[midway,right] {$\I_C$};
+
+\draw[->,very thick] (0,0)--(3.1,1.9)
+node[midway,above left] {$\I$};
+
+\draw[->,thick] (0,0)--(1.35,0)
+node[below] {$\U$};
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{Wniosek:}
+
+W szeregowym RC napięcie całkowite jest sumą wskazów napięć,
+a w równoległym RC prąd całkowity jest sumą wskazów prądów.
+
+\newpage
+
+% ==================================================
+\section{Moduł impedancji szeregowego obwodu RC}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Wyznaczyć moduł impedancji obwodu szeregowego RC dla częstotliwości
+$f=1\,\mathrm{Hz}$ oraz $f=1\,\mathrm{MHz}$, przy:
+
+\[
+R=1\,\mathrm{k\Omega},
+\qquad
+C=1\,\mathrm{\mu F}.
+\]
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Dla połączenia szeregowego impedancje się sumują:
+
+\[
+\Z=R+\frac{1}{\jw C}
+=R-\mathrm{j}X_C.
+\]
+
+Reaktancja kondensatora:
+
+\[
+X_C=\frac{1}{\omega C}
+=\frac{1}{2\pi fC}.
+\]
+
+Moduł impedancji:
+
+\[
+|\Z|=\sqrt{R^2+X_C^2}.
+\]
+
+\subsection*{Dane i szukane}
+
+\[
+R=1000\,\Omega,
+\qquad
+C=10^{-6}\,\mathrm{F},
+\]
+
+\[
+f_1=1\,\mathrm{Hz},
+\qquad
+f_2=10^6\,\mathrm{Hz}.
+\]
+
+Szukane:
+
+\[
+|\Z(f_1)|,\qquad |\Z(f_2)|.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+\textbf{1. Dla $f_1=1\,\mathrm{Hz}$.}
+
+\[
+\omega_1=2\pi f_1=2\pi\,\mathrm{rad/s}.
+\]
+
+\[
+X_{C1}=
+\frac{1}{2\pi\cdot1\cdot10^{-6}}
+\approx159154.94\,\Omega.
+\]
+
+Podstawiamy do wzoru na moduł impedancji:
+
+\[
+|\Z_1|=
+\sqrt{1000^2+159154.94^2}.
+\]
+
+\[
+|\Z_1|\approx159158.08\,\Omega.
+\]
+
+\textbf{2. Dla $f_2=1\,\mathrm{MHz}$.}
+
+\[
+X_{C2}=
+\frac{1}{2\pi\cdot10^6\cdot10^{-6}}.
+\]
+
+\[
+X_{C2}\approx0.159155\,\Omega.
+\]
+
+\[
+|\Z_2|=
+\sqrt{1000^2+0.159155^2}.
+\]
+
+\[
+|\Z_2|\approx1000.000013\,\Omega.
+\]
+
+\subsection*{Odpowiedź}
+
+\[
+\boxed{|\Z(1\,\mathrm{Hz})|\approx159.158\,\mathrm{k\Omega}}
+\]
+
+\[
+\boxed{|\Z(1\,\mathrm{MHz})|\approx1.000000013\,\mathrm{k\Omega}}
+\]
+
+Przy małej częstotliwości dominuje reaktancja kondensatora,
+a przy bardzo dużej częstotliwości jego reaktancja jest bardzo mała
+w porównaniu z rezystancją.
+
+\newpage
+
+% ==================================================
+\section{Moduł impedancji obwodu z rezystorem i cewką}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Obliczyć moduł impedancji obwodu przedstawionego na schemacie
+dla częstotliwości $f=1\,\mathrm{Hz}$ oraz $f=1\,\mathrm{MHz}$.
+
+Wartości elementów:
+
+\[
+R_1=R_2=10\,\Omega,
+\qquad
+L=10\,\mathrm{mH}.
+\]
+
+\begin{center}
+\begin{circuitikz}
+
+\draw (0,2) to[short,o-] (0.7,2)
+      to[R,l={$R_1=10\,\Omega$}] (2.6,2)
+      -- (3.2,2);
+
+\draw (3.2,2) to[L,l={$L=10\,\mathrm{mH}$}] (3.2,0);
+
+\draw (3.2,2) -- (4.2,2)
+      to[R,l_={$R_2=10\,\Omega$}] (4.2,0);
+
+\draw (4.2,0)--(0,0)
+      to[short,o-] (0,0);
+
+\end{circuitikz}
+\end{center}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Impedancja cewki:
+
+\[
+\Z_L=\jw L.
+\]
+
+Dla równoległego połączenia rezystora i cewki:
+
+\[
+\Z_{R_2\parallel L}
+=
+\frac{R_2\Z_L}{R_2+\Z_L}.
+\]
+
+Cały obwód składa się z $R_1$ połączonego szeregowo z tą gałęzią:
+
+\[
+\Z=R_1+\frac{R_2\jw L}{R_2+\jw L}.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+\textbf{1. Dla $f=1\,\mathrm{Hz}$.}
+
+\[
+\omega=2\pi\,\mathrm{rad/s}.
+\]
+
+\[
+\Z_L=
+\mathrm{j}2\pi\cdot1\cdot0.01.
+\]
+
+\[
+\Z_L=\mathrm{j}0.062832\,\Omega.
+\]
+
+Impedancja gałęzi równoległej:
+
+\[
+\Z_{R_2\parallel L}
+=
+\frac{10(\mathrm{j}0.062832)}
+{10+\mathrm{j}0.062832}.
+\]
+
+\[
+\Z_{R_2\parallel L}
+\approx
+0.0003948+\mathrm{j}0.0628294\,\Omega.
+\]
+
+Całkowita impedancja:
+
+\[
+\Z_1
+\approx
+10.0003948+\mathrm{j}0.0628294\,\Omega.
+\]
+
+\[
+|\Z_1|\approx10.000592\,\Omega.
+\]
+
+\textbf{2. Dla $f=1\,\mathrm{MHz}$.}
+
+\[
+\Z_L=
+\mathrm{j}2\pi\cdot10^6\cdot0.01.
+\]
+
+\[
+\Z_L=\mathrm{j}62831.853\,\Omega.
+\]
+
+\[
+\Z_{R_2\parallel L}
+=
+\frac{10(\mathrm{j}62831.853)}
+{10+\mathrm{j}62831.853}.
+\]
+
+\[
+\Z_{R_2\parallel L}
+\approx
+9.99999975+\mathrm{j}0.00159155\,\Omega.
+\]
+
+Całkowita impedancja:
+
+\[
+\Z_2
+\approx
+19.99999975+\mathrm{j}0.00159155\,\Omega.
+\]
+
+\[
+|\Z_2|\approx19.99999981\,\Omega.
+\]
+
+\subsection*{Odpowiedź}
+
+\[
+\boxed{|\Z(1\,\mathrm{Hz})|\approx10.000592\,\Omega}
+\]
+
+\[
+\boxed{|\Z(1\,\mathrm{MHz})|\approx20.000000\,\Omega}
+\]
+
+Dla małej częstotliwości cewka ma małą impedancję.
+Dla dużej częstotliwości impedancja cewki jest duża,
+więc gałąź zachowuje się prawie jak sam rezystor $R_2$.
+
+\newpage
+
+% ==================================================
+\section{Impedancja obwodu RLC i warunek rezonansu}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Wyznaczyć impedancję obwodu, w którym cewka $L$ jest połączona
+szeregowo z równoległym połączeniem rezystora $R$ i kondensatora $C$.
+
+Określić warunek, jaki muszą spełniać wartości $R$, $L$ i $C$,
+aby wystąpił rezonans, czyli aby obwód miał charakter czysto rezystancyjny.
+
+\begin{center}
+\begin{circuitikz}
+
+\draw (0,2) to[short,o-] (0.6,2)
+      to[L,l=$L$] (2.2,2)
+      -- (3.2,2);
+
+\draw (3.2,2) to[R,l=$R$] (3.2,0);
+
+\draw (3.2,2)--(4.5,2)
+      to[C,l=$C$] (4.5,0);
+
+\draw (3.2,0)--(4.5,0)--(0,0)
+      to[short,o-] (0,0);
+
+\end{circuitikz}
+\end{center}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Impedancja równoległego połączenia $R$ i $C$:
+
+\[
+\Z_{R\parallel C}
+=
+\left(
+\frac{1}{R}+\jw C
+\right)^{-1}.
+\]
+
+Po uproszczeniu:
+
+\[
+\Z_{R\parallel C}
+=
+\frac{R}{1+\jw RC}.
+\]
+
+Cewka jest połączona szeregowo z tą gałęzią, zatem:
+
+\[
+\Z(\omega)
+=
+\jw L+\frac{R}{1+\jw RC}.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+Usuwamy niewymierność z mianownika drugiego składnika:
+
+\[
+\Z(\omega)
+=
+\jw L+
+\frac{R(1-\jw RC)}
+{1+(\omega RC)^2}.
+\]
+
+Po rozdzieleniu na część rzeczywistą i urojoną:
+
+\[
+\boxed{
+\Z(\omega)=
+\frac{R}{1+(\omega RC)^2}
++
+\mathrm{j}
+\left(
+\omega L-
+\frac{\omega R^2C}
+{1+(\omega RC)^2}
+\right)
+}
+\]
+
+Rezonans zachodzi, gdy część urojona impedancji jest równa zeru:
+
+\[
+\omega L-
+\frac{\omega R^2C}
+{1+(\omega RC)^2}=0.
+\]
+
+Dla $\omega\neq0$:
+
+\[
+L=
+\frac{R^2C}
+{1+(\omega_0RC)^2}.
+\]
+
+Stąd:
+
+\[
+(\omega_0RC)^2=
+\frac{R^2C}{L}-1.
+\]
+
+Ostatecznie:
+
+\[
+\boxed{
+\omega_0=
+\sqrt{
+\frac{1}{LC}
+-
+\frac{1}{R^2C^2}
+}
+}
+\]
+
+Częstotliwość rezonansowa:
+
+\[
+f_0=\frac{\omega_0}{2\pi}.
+\]
+
+Aby $\omega_0$ była rzeczywista i dodatnia, musi być spełniony warunek:
+
+\[
+\boxed{R^2C>L}
+\]
+
+czyli:
+
+\[
+\boxed{R>\sqrt{\frac{L}{C}}}
+\]
+
+W rezonansie impedancja jest czysto rzeczywista:
+
+\[
+\boxed{
+\Z(\omega_0)=
+\frac{R}{1+(\omega_0RC)^2}
+=
+\frac{L}{RC}
+}
+\]
+
+\subsection*{Odpowiedź}
+
+Warunek wystąpienia rezonansu:
+
+\[
+\boxed{R^2C>L}
+\]
+
+Częstotliwość rezonansowa:
+
+\[
+\boxed{
+f_0=
+\frac{1}{2\pi}
+\sqrt{
+\frac{1}{LC}
+-
+\frac{1}{R^2C^2}
+}
+}
+\]
+
+\newpage
+
+% ==================================================
+\section{Twierdzenie Thevenina dla dzielnika RC}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Zastosować twierdzenie Thevenina do dzielnika RC.
+Określić, jaki warunek musi być spełniony, aby napięcie Thevenina
+$U_{AB}$ nie zależało od częstotliwości.
+
+\begin{center}
+\begin{circuitikz}
+
+\draw (0,0) to[sV,l=$V_1$] (0,3)
+      -- (1,3);
+
+\draw (1.6,3) to[R,l=$R_1$] (1.6,1.5);
+\draw (1.6,3)--(2.8,3);
+
+\draw (2.8,3) to[C,l=$C_1$] (2.8,1.5);
+
+\draw (1.6,1.5)--(3.8,1.5);
+
+\draw (1.6,1.5) to[R,l=$R_2$] (1.6,0);
+\draw (2.8,1.5) to[C,l=$C_2$] (2.8,0);
+
+\draw (1.6,0)--(0,0);
+\draw (2.8,0)--(0,0);
+
+\draw (3.8,1.5) to[short,-o] (4.3,1.5)
+node[right] {$A$};
+
+\draw (3.8,0) to[short,-o] (4.3,0)
+node[right] {$B$};
+
+\end{circuitikz}
+\end{center}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Każdy równoległy układ RC zastępujemy impedancją:
+
+\[
+\Z_1=
+R_1\parallel\frac{1}{\jw C_1}
+=
+\frac{R_1}{1+\jw R_1C_1}.
+\]
+
+\[
+\Z_2=
+R_2\parallel\frac{1}{\jw C_2}
+=
+\frac{R_2}{1+\jw R_2C_2}.
+\]
+
+Napięcie Thevenina jest napięciem jałowym na zaciskach $A$--$B$.
+
+Impedancję Thevenina wyznacza się po wyzerowaniu idealnego źródła napięcia.
+
+\subsection*{Rozwiązanie krok po kroku}
+
+Ponieważ $A$--$B$ jest wyjściem nieobciążonym,
+napięcie jest napięciem dzielnika:
+
+\[
+\boxed{
+\U_{\mathrm{Th}}=
+\U_{AB}
+=
+\U_1\frac{\Z_2}{\Z_1+\Z_2}
+}
+\]
+
+Po podstawieniu impedancji:
+
+\[
+\U_{AB}
+=
+\U_1
+\frac{R_2(1+\jw R_1C_1)}
+{R_1(1+\jw R_2C_2)+R_2(1+\jw R_1C_1)}.
+\]
+
+Po uporządkowaniu:
+
+\[
+\U_{AB}
+=
+\U_1
+\frac{R_2+\jw R_1R_2C_1}
+{R_1+R_2+\jw R_1R_2(C_1+C_2)}.
+\]
+
+Aby iloraz nie zależał od $\omega$,
+współczynniki przy $\jw$ w liczniku i mianowniku muszą
+być proporcjonalne do odpowiednich wyrazów stałych.
+
+Otrzymujemy:
+
+\[
+\frac{R_1R_2C_1}{R_2}
+=
+\frac{R_1R_2(C_1+C_2)}{R_1+R_2}.
+\]
+
+Po uproszczeniu:
+
+\[
+\boxed{R_1C_1=R_2C_2}
+\]
+
+Jest to warunek równości stałych czasowych obu gałęzi.
+
+Wtedy:
+
+\[
+\boxed{
+\U_{AB}=
+\U_1\frac{R_2}{R_1+R_2}
+}
+\]
+
+czyli napięcie Thevenina nie zależy od częstotliwości.
+
+Po zwarciu idealnego źródła napięcia obie impedancje
+są połączone równolegle, dlatego:
+
+\[
+\boxed{
+\Z_{\mathrm{Th}}=
+\Z_1\parallel\Z_2
+=
+\frac{\Z_1\Z_2}{\Z_1+\Z_2}
+}
+\]
+
+\subsection*{Odpowiedź}
+
+Warunek niezależności napięcia Thevenina od częstotliwości:
+
+\[
+\boxed{R_1C_1=R_2C_2}
+\]
+
+Wtedy:
+
+\[
+\boxed{
+\U_{AB}=
+\U_1\frac{R_2}{R_1+R_2}
+}
+\]
+
+\newpage
+
+% ==================================================
+\section{Wzmocnienie dwóch stopni wzmacniacza}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Wzmocnienie dwóch stopni wzmacniacza napięciowego wynosi odpowiednio
+$20\,\mathrm{dB}$ oraz $30\,\mathrm{dB}$.
+
+Obliczyć całkowite wzmocnienie, stosując skalę decybelową
+oraz bezwymiarową (V/V).
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Dla wzmocnienia napięciowego:
+
+\[
+G_{\mathrm{dB}}=20\log_{10} A_v.
+\]
+
+Odwrotna zależność:
+
+\[
+A_v=10^{G_{\mathrm{dB}}/20}.
+\]
+
+Wzmocnienia kolejnych stopni połączonych kaskadowo mnożą się
+w skali liniowej, natomiast w decybelach dodają się:
+
+\[
+A_{v,\mathrm{całk}}=A_{v1}A_{v2}.
+\]
+
+\[
+G_{\mathrm{dB,całk}}
+=
+G_{\mathrm{dB1}}+G_{\mathrm{dB2}}.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+Całkowite wzmocnienie w decybelach:
+
+\[
+G_{\mathrm{dB,całk}}=20+30=50\,\mathrm{dB}.
+\]
+
+Wzmocnienia poszczególnych stopni w skali liniowej:
+
+\[
+A_{v1}=10^{20/20}=10.
+\]
+
+\[
+A_{v2}=10^{30/20}=10^{1.5}\approx31.6228.
+\]
+
+Iloczyn:
+
+\[
+A_{v,\mathrm{całk}}
+=
+10\cdot31.6228
+\approx316.228.
+\]
+
+Można to również obliczyć bezpośrednio:
+
+\[
+A_{v,\mathrm{całk}}
+=
+10^{50/20}
+\approx316.228.
+\]
+
+\subsection*{Odpowiedź}
+
+\[
+\boxed{G_{\mathrm{dB,całk}}=50\,\mathrm{dB}}
+\]
+
+\[
+\boxed{A_{v,\mathrm{całk}}\approx316.23\,\mathrm{V/V}}
+\]
+
+\newpage
+
+% ==================================================
+\section{Filtr górnoprzepustowy RC}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Wyznaczyć zespolony współczynnik przenoszenia filtru
+górnoprzepustowego RC i wyznaczyć częstotliwość graniczną.
+
+\begin{center}
+\begin{circuitikz}
+
+\draw (0,1.5) to[short,o-] (0.7,1.5)
+      to[C,l=$C$] (2.4,1.5)
+      -- (3.2,1.5)
+      to[R,l=$R$] (3.2,0)
+      -- (0,0)
+      to[short,o-] (0,0);
+
+\draw (3.2,1.5) to[short,-o] (4,1.5)
+node[right] {$U_{\mathrm{wy}}$};
+
+\draw (0,1.5) node[left] {$U_{\mathrm{we}}$};
+
+\end{circuitikz}
+\end{center}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Współczynnik przenoszenia definiujemy jako:
+
+\[
+\Htr(\jw)=
+\frac{\U_{\mathrm{wy}}}{\U_{\mathrm{we}}}.
+\]
+
+Dla dzielnika napięcia:
+
+\[
+\Htr(\jw)=
+\frac{\Z_R}{\Z_C+\Z_R}.
+\]
+
+Impedancje:
+
+\[
+\Z_R=R,
+\qquad
+\Z_C=\frac{1}{\jw C}.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+Podstawiamy impedancje:
+
+\[
+\Htr(\jw)=
+\frac{R}{R+\frac{1}{\jw C}}.
+\]
+
+Po uproszczeniu:
+
+\[
+\boxed{
+\Htr(\jw)=
+\frac{\jw RC}{1+\jw RC}
+}
+\]
+
+Częstotliwość graniczna występuje dla:
+
+\[
+\omega_gRC=1.
+\]
+
+Stąd:
+
+\[
+\boxed{\omega_g=\frac{1}{RC}}
+\]
+
+oraz:
+
+\[
+\boxed{f_g=\frac{1}{2\pi RC}}
+\]
+
+Przy $f\ll f_g$ kondensator ma dużą reaktancję
+i sygnał wyjściowy jest silnie tłumiony.
+
+Przy $f\gg f_g$ reaktancja kondensatora jest mała
+i $\Htr\to1$.
+
+Jest to filtr górnoprzepustowy.
+
+\subsection*{Odpowiedź}
+
+\[
+\boxed{
+\Htr(\jw)=
+\frac{\jw RC}{1+\jw RC}
+}
+\]
+
+\[
+\boxed{f_g=\frac{1}{2\pi RC}}
+\]
+
+\newpage
+
+% ==================================================
+\section{Współczynnik przenoszenia układu RC}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Wyznaczyć współczynnik przenoszenia układu przedstawionego
+na schemacie oraz omówić przypadki skrajne.
+
+W układzie rezystor $3R$ jest połączony szeregowo z gałęzią,
+w której rezystor $R$ i kondensator $C$ są połączone szeregowo.
+Napięcie wyjściowe jest mierzone na zaciskach tej gałęzi.
+
+\begin{center}
+\begin{circuitikz}
+
+\draw (0,1.7) to[short,o-] (0.7,1.7)
+      to[R,l=$3R$] (2.8,1.7)
+      -- (3.5,1.7)
+      to[R,l=$R$] (3.5,0.75)
+      to[C,l=$C$] (3.5,0)
+      -- (0,0)
+      to[short,o-] (0,0);
+
+\draw (2.8,1.7) to[short,-o] (4.2,1.7);
+
+\draw (3.5,0) -- (4.2,0)
+      to[short,-o] (4.2,0);
+
+\draw (0,1.7) node[left] {$U_{\mathrm{we}}$};
+
+\draw (4.2,1.7) node[right] {$U_{\mathrm{wy}}$};
+
+\end{circuitikz}
+\end{center}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Układ jest dzielnikiem napięcia.
+
+Impedancja gałęzi wyjściowej:
+
+\[
+\Z_{\mathrm{wy}}
+=
+R+\frac{1}{\jw C}.
+\]
+
+Współczynnik przenoszenia:
+
+\[
+\Htr(\jw)=
+\frac{\Z_{\mathrm{wy}}}
+{3R+\Z_{\mathrm{wy}}}.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+Podstawiamy impedancję gałęzi:
+
+\[
+\Htr(\jw)=
+\frac{R+\frac{1}{\jw C}}
+{3R+R+\frac{1}{\jw C}}.
+\]
+
+\[
+\Htr(\jw)=
+\frac{R+\frac{1}{\jw C}}
+{4R+\frac{1}{\jw C}}.
+\]
+
+Mnożąc licznik i mianownik przez $\jw C$, otrzymujemy:
+
+\[
+\boxed{
+\Htr(\jw)=
+\frac{1+\jw RC}{1+\jw\,4RC}
+}
+\]
+
+\textbf{Przypadek 1: częstotliwość dąży do zera.}
+
+Dla $\omega\to0$:
+
+\[
+\lim_{\omega\to0}\Htr(\jw)=1.
+\]
+
+Kondensator zachowuje się jak przerwa w obwodzie.
+Prąd jest bliski zeru, więc spadek napięcia na rezystorze $3R$
+jest bliski zeru, a napięcie wyjściowe jest prawie równe wejściowemu.
+
+\textbf{Przypadek 2: częstotliwość dąży do nieskończoności.}
+
+Dla $\omega\to\infty$:
+
+\[
+\lim_{\omega\to\infty}\Htr(\jw)
+=
+\frac{R}{4R}
+=
+\frac14.
+\]
+
+Kondensator zachowuje się jak zwarcie,
+więc pozostaje dzielnik rezystancyjny $3R$ i $R$.
+
+Wysokoczęstotliwościowe wzmocnienie napięciowe wynosi $1/4$.
+
+\subsection*{Wniosek}
+
+Jest to układ o charakterystyce dolnoprzepustowej
+z niezerowym wzmocnieniem dla wysokich częstotliwości.
+
+Transmitancja zmienia się od $1$ do $1/4$.
+Nie jest to idealny filtr dolnoprzepustowy tłumiący sygnał do zera.
+
+\newpage
+
+% ==================================================
+\section{Filtr RL i jego odpowiednik RC}
+% ==================================================
+
+\subsection*{Treść zadania}
+
+Wyznaczyć współczynnik przenoszenia przedstawionego filtru RL,
+określić jego rodzaj oraz zastąpić go filtrem $R'C$,
+wyznaczając odpowiednie wartości $R'$ i $C'$.
+
+\begin{center}
+\begin{circuitikz}
+
+\draw (0,1.5) to[short,o-] (0.7,1.5)
+      to[L,l=$L$] (2.6,1.5)
+      -- (3.3,1.5)
+      to[R,l=$R$] (3.3,0)
+      -- (0,0)
+      to[short,o-] (0,0);
+
+\draw (3.3,1.5) to[short,-o] (4.1,1.5);
+
+\draw (3.3,0) to[short,-o] (4.1,0);
+
+\draw (0,1.5) node[left] {$U_{\mathrm{we}}$};
+
+\draw (4.1,1.5) node[right] {$U_{\mathrm{wy}}$};
+
+\end{circuitikz}
+\end{center}
+
+\subsection*{Najważniejsze wzory i teoria}
+
+Napięcie wyjściowe jest mierzone na rezystorze $R$.
+
+Dla dzielnika impedancyjnego:
+
+\[
+\Htr(\jw)=
+\frac{\Z_R}{\Z_L+\Z_R}.
+\]
+
+Impedancje:
+
+\[
+\Z_R=R,
+\qquad
+\Z_L=\jw L.
+\]
+
+\subsection*{Rozwiązanie krok po kroku}
+
+Podstawiamy impedancje:
+
+\[
+\Htr(\jw)=
+\frac{R}{\jw L+R}.
+\]
+
+Po uproszczeniu:
+
+\[
+\boxed{
+\Htr(\jw)=
+\frac{1}{1+\jw\frac{L}{R}}
+}
+\]
+
+Dla $\omega\to0$ współczynnik dąży do $1$,
+natomiast dla $\omega\to\infty$ dąży do zera.
+
+Jest to zatem \textbf{filtr dolnoprzepustowy RL}.
+
+Dla filtru RC dolnoprzepustowego, w którym napięcie wyjściowe
+jest mierzone na kondensatorze, współczynnik przenoszenia ma postać:
+
+\[
+\Htr_{RC}(\jw)=
+\frac{1}{1+\jw R'C'}.
+\]
+
+Porównując oba wyrażenia, otrzymujemy warunek równoważności:
+
+\[
+\boxed{R'C'=\frac{L}{R}}
+\]
+
+Jest to jeden warunek na dwie niewiadome,
+dlatego par $(R',C')$ jest nieskończenie wiele.
+
+Można wybrać na przykład:
+
+\[
+R'=R.
+\]
+
+Wtedy:
+
+\[
+\boxed{C'=\frac{L}{R^2}}
+\]
+
+Można też wybrać dowolną dodatnią wartość $C'$
+i obliczyć:
+
+\[
+R'=\frac{L}{RC'}.
+\]
+
+Oba filtry mają wtedy taki sam współczynnik przenoszenia.
+
+\subsection*{Odpowiedź}
+
+Współczynnik przenoszenia:
+
+\[
+\boxed{
+\Htr(\jw)=
+\frac{1}{1+\jw\frac{L}{R}}
+}
+\]
+
+Rodzaj filtru: dolnoprzepustowy RL.
+
+Warunek równoważności filtru RC:
+
+\[
+\boxed{R'C'=\frac{L}{R}}
+\]
+
+Przykładowy dobór elementów:
+
+\[
+\boxed{R'=R,\qquad C'=\frac{L}{R^2}}
+\]
+
+% ==================================================
+\section*{Podsumowanie}
+% ==================================================
+
+\begin{itemize}
+
+    \item Szeregowy obwód RC:
+    impedancja $R+1/(\jw C)$.
+
+    \item Równoległy obwód RC:
+    prądy gałęzi sumują się wskazowo.
+
+    \item Dla rezonansu w obwodzie z cewką szeregową
+    i równoległym RC wymagane jest $R^2C>L$.
+
+    \item Napięcie dzielnika z równoległymi gałęziami RC
+    nie zależy od częstotliwości, gdy
+    $R_1C_1=R_2C_2$.
+
+    \item Wzmocnienia kaskadowe dodają się w dB,
+    a mnożą w skali liniowej.
+
+\end{itemize}
+
+\end{document}
+
