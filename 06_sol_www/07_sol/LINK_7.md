@@ -2,8 +2,8 @@
 
 ## Strona
 
-https://NAZWA-UZYTKOWNIKA.github.io/api
+https://eryk360779.github.io/api/
 
 ## Repozytorium
 
-https://github.com/NAZWA-UZYTKOWNIKA/api
+https://github.com/Eryk360779/api
