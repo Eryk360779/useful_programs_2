@@ -2,8 +2,8 @@
 
 ## Strona
 
-https://NAZWA-UZYTKOWNIKA.github.io/rzut/
+https://eryk360779.github.io/rzut/
 
 ## Repozytorium
 
-https://github.com/NAZWA-UZYTKOWNIKA/rzut
+https://github.com/Eryk360779/rzut
