@@ -2,7 +2,7 @@
 
 ## Strona
 
-(https://eryk360779.github.io/quiz/
+https://eryk360779.github.io/quiz/
 
 ## Repozytorium
 
