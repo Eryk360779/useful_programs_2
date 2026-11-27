@@ -2,7 +2,7 @@
 
 ## Strona
 
-https://eryk360779.github.io/edukacja/#idea
+https://eryk360779.github.io/edukacja/
     
 ## Repozytorium
 
