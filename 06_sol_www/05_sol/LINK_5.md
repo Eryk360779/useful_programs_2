@@ -2,8 +2,8 @@
 
 ## Strona
 
-https://NAZWA-UZYTKOWNIKA.github.io/edukacja/
+https://eryk360779.github.io/edukacja/#idea
     
 ## Repozytorium
 
-https://github.com/NAZWA-UZYTKOWNIKA/edukacja
+https://github.com/Eryk360779/edukacja
