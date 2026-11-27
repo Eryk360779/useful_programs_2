@@ -2,8 +2,8 @@
 
 ## Strona
 
-https://NAZWA-UZYTKOWNIKA.github.io/quiz/
+(https://eryk360779.github.io/quiz/
 
 ## Repozytorium
 
-https://github.com/NAZWA-UZYTKOWNIKA/quiz
+https://github.com/Eryk360779/quiz
